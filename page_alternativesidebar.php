@@ -16,7 +16,7 @@ if ( has_post_thumbnail() ) {
 ?>
 		<div class="content">
 			<div class="contentrow">
-<div class="cleft part">
+<div class="cleft">
 <?php while ( have_posts() ) : the_post(); ?>
 <div class="page">	
 		
@@ -28,7 +28,5 @@ if ( has_post_thumbnail() ) {
         </div></div>
 </div>
 </div>
-<?php get_sidebar('side2'); ?>
+<?php get_sidebar('side2'); ?></div></div>
 <?php get_footer(); ?>
-</div>
-</div>
