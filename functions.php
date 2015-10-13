@@ -1,4 +1,6 @@
 <?php
+include('function_addcaptionbox.php');
+
 function pcamp_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Artikel Sidebar', 'pcamp' ),

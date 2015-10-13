@@ -9,7 +9,14 @@ if ( has_post_thumbnail() ) {
   ?>
 	<div class="cbanner">
 		<div class="post-image"><?php the_post_thumbnail(); ?></div>
-		<span class="banner-caption"><?php the_title(); ?></span>
+		<?php
+			$pcustom = get_post_custom_values("_pcamp_caption"); 
+			if (trim($pcustom[0]) != "") {
+			?>
+					<span class="banner-caption"><?php echo $pcustom[0]; ?></span>
+			<?php
+			}
+		?>
 	</div>
   <?php
 } 
