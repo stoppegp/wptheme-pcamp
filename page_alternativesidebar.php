@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Alternative Sidebar
+Template Name: Mit Seiten Sidebar
 */
 ?>
 <?php get_header(); ?>

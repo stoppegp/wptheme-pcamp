@@ -1,7 +1,7 @@
 <?php
 function pcamp_widgets_init() {
 	register_sidebar( array(
-		'name' => __( 'Side Sidebar', 'pcamp' ),
+		'name' => __( 'Artikel Sidebar', 'pcamp' ),
 		'id' => 'sidebar-side',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -9,7 +9,7 @@ function pcamp_widgets_init() {
 		'after_title' => '</div>',
 	) );
 	register_sidebar( array(
-		'name' => __( 'Alternative Side Sidebar', 'pcamp' ),
+		'name' => __( 'Seiten Sidebar', 'pcamp' ),
 		'id' => 'sidebar-side2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",

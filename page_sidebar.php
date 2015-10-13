@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Sidebar
+Template Name: Mit Artikel Sidebar
 */
 ?>
 <?php get_header(); ?>
