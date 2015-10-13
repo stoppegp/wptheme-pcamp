@@ -1,0 +1,794 @@
+html {
+  box-sizing: border-box !important;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #ff8800;
+	font-size: 16px;
+	font-family: DejaWeb, sans-serif;
+	background-image: url('images/hpbg.jpg');
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: auto 668px;
+	
+}
+
+/*#wrapper {
+	max-width: 1200px;
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+}*/
+
+
+@font-face {
+  font-family: 'DejaWeb';
+  src: url('fonts/dejaweb-webfont.eot');
+  src: url('fonts/dejaweb-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/dejaweb-webfont.woff') format('woff'),
+         url('fonts/dejaweb-webfont.ttf') format('truetype'); 
+  font-weight: normal;
+  font-style: normal; 
+}
+
+@font-face {
+  font-family: 'DejaWeb';
+  src: url('fonts/DejaWeb-Italic.eot?#iefix') format('embedded-opentype'),  url('fonts/DejaWeb-Italic.woff') format('woff'), url('fonts/DejaWeb-Italic.ttf')  format('truetype'), url('fonts/DejaWeb-Italic.svg#DejaWeb-Italic') format('svg');
+  font-weight: normal;
+  font-style: italic; 
+}
+
+@font-face {
+  font-family: 'PoliticsHead';
+  src: url('fonts/PoliticsHead-Bold.eot?#iefix') format('embedded-opentype'),  url('fonts/PoliticsHead-Bold.otf')  format('opentype'),
+	     url('fonts/PoliticsHead-Bold.woff') format('woff'), url('fonts/PoliticsHead-Bold.ttf')  format('truetype'), url('fonts/PoliticsHead-Bold.svg#PoliticsHead-Bold') format('svg');
+}
+ 
+table {
+	border-collapse: collapse;
+}
+td, th {
+	border-bottom: 1px solid #ddd;
+	padding: 0.5em 1em 0.5em 0.25em;
+}
+th {
+	text-align: left;
+	//color: #ff8800;
+}
+ul {
+	padding: 0;
+	margin: 0;
+	list-style: disc outside none;
+	padding-left: 20px;
+}
+li {
+padding: 0.2em 0px 0.2em 0.2em;
+}
+
+a {
+	color: #ff8800;
+	text-decoration: none;
+}
+a:hover, a:focus {
+	opacity: .8;
+	text-decoration: none;
+}
+a:hover img, a:focus img {
+	opacity: .8;
+}
+a:focus {
+	text-decoration: underline;
+}
+
+h1 {
+	font-size: 160%;
+	margin: 0;
+	font-family: PoliticsHead;
+}
+h2 {
+	font-size: 140%;
+	margin: 0;
+}
+h2.post-title {
+	font-family: PoliticsHead;
+}
+h3 {
+	font-size: 120%;
+	margin: 0;
+}
+
+.alignright {
+	float: right;
+	padding: 5px;
+}
+
+blockquote {
+	margin-left: 10px;
+	border-left: 5px solid #bbb;
+	padding-left: 10px;
+}
+
+hr {
+	border : 0;
+	width: 80%;
+	background-color: #ddd;
+	height: 1px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#pagecontainer {
+	max-width: 1044px;
+	width: 100%;
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Header */
+header#mainheader {
+	width: 100%;
+	height: 170px;
+	position: relative;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	margin-bottom: 20px;
+	background-image: url('images/hpheader.png');
+	background-position: right bottom;
+	background-repeat: no-repeat;
+}
+header#mainheader a.homelink {
+	display: block;
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+}	
+header#mainheader a.homelink h1, .extrahomelink h1 {
+	font-family: PoliticsHead;
+	font-size: 200%;
+	color: black;
+	font-weight: normal;
+}
+header#mainheader a.homelink h2, .extrahomelink h2 {
+	font-family: DejaWeb;
+	font-size: 120%;
+	color: black;
+	font-weight: normal;
+	font-style: italic;
+}
+.extrahomelink {
+	display: none;
+}
+
+/* Footer */
+footer#mainfooter {
+	width: 100%;
+	min-height: 40px;
+	text-align: right;
+	padding: 10px;
+	background-color: white;
+	
+}
+
+#mainfooter .footermenu ul {
+	list-style-type: none;
+	margin: 0;
+	right: 0;
+}
+#mainfooter .footermenu ul li {
+	display: inline-block;
+}
+#mainfooter .footermenu ul li:after {
+	content: " |";
+}
+#mainfooter .footermenu ul li:last-child:after {
+	content: "";
+}
+
+
+/* Content */
+
+
+div.content {
+//	display: table;
+	overflow: hidden;
+	width: 100%;
+	border-collapse: separate;
+	margin-top: 20px;
+}
+div.contentrow {
+//	display: table-row;
+}
+div.contentrow > div {
+//	display: table-cell;
+}
+
+div.cleft {
+	width: 70%;
+	float: left;
+}
+div.cright {
+	width: 300px;
+	width: 30%;
+	padding-left: 20px;
+	float: right;
+}
+
+div.cbanner {
+	width: 100%;
+	height: 0px;
+	padding-top: 20%;
+	overflow: hidden;
+	margin-top: 20px;
+	position: relative;
+	left: 0;
+	top: 0;
+}
+div.cbanner .post-image img { 
+	width: 100%;
+	height: auto;
+	margin-top: -20%;
+}
+div.cbanner .banner-caption, div.cbanner h1.post-title {
+	display: inline-block;
+	font-family: PoliticsHead;
+	font-size: 150%;
+	padding: 7px;
+	background-color: white;
+	position: absolute;
+	left: 25px;
+	bottom: 20px;
+}
+
+div.part, aside.widget {
+	width: 100%;
+	background: rgba(255, 255, 255, .8);
+	margin-bottom: 20px;
+	padding: 10px;
+	overflow: auto;
+}
+div.part > p:first-child, .post-content > p:first-child, aside.widget > p:first-child {
+	margin-top: 0;
+}
+div.part > p:last-child, .post-content > p:last-child, aside.widget > p:last-child {
+	margin-bottom: 0;
+}
+aside .widget-title {
+	font-size: 110%;
+	font-weight: bold;
+	margin-bottom: 5px;
+	
+}
+.post-content {
+	margin-top: 0;
+}
+.part.titlecontainer {
+	margin-bottom: 0;
+}
+.pagelinks {
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+.pagelinks a {
+	display: block;
+	background-color: white;
+	background: rgba(255, 255, 255, .8);
+	float: left;
+	height: 40px;
+	padding: 10px;
+	line-height: 20px;
+}
+
+.pagelinks .nextlink > a {
+	float: left;
+}
+.pagelinks .prevlink > a {
+	float: right;
+}
+
+aside.widget ul.menu, div.part ul.menu {
+	list-style-type: none;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+aside.widget ul.menu > li, div.part ul.menu > li {
+	display: block;
+	width: 100%;
+	padding: 5px;
+}
+aside.widget ul.menu > li > a, div.part ul.menu > li > a {
+	display: block;
+	margin: -5px;
+	padding: 5px;
+}
+aside.widget ul.menu > li > a:hover, div.part ul.menu > li > a:hover {
+	background-color: #ff8800;
+	color: white;
+}
+/* Suche */
+
+#mainnav > form.search-form {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+
+	
+}
+#mainnav > form.search-form span.screen-reader-text {
+	display: none;
+	
+}
+#mainnav > form.search-form input.search-submit {
+	display: none;
+}
+#mainnav > form.search-form input.search-field {
+	background-image: url('images/search_r1.png'), linear-gradient(90deg, #fff 0%, #fff 100%);
+	background-repeat: no-repeat, no-repeat;
+	background-position: right center, right center;
+	background-size: 36px auto, 36px auto;
+	width: 36px;
+	border: none;
+	border-left: 1px solid #ddd;
+	transition: all 0.5s ease-in-out;
+	color: rgba(255, 255, 255, 0);
+	height: 100%;
+	cursor: pointer;
+	z-index: 106;
+}
+#mainnav > form.search-form input.search-field::-moz-placeholder {
+	color: transparent;
+	transition: color 0.5s ease-in-out;
+}
+ #mainnav > form.search-form input.search-field:-moz-placeholder {
+ 	color: transparent;
+	transition: color 0.5s ease-in-out;
+ }
+ #mainnav > form.search-form input.search-field::-webkit-input-placeholder {
+	color: transparent;
+	transition: color 0.5s ease-in-out;
+}
+#mainnav > form.search-form input.search-field:hover {
+		background-image: url('images/search2_r1.png'), linear-gradient(90deg, #ff8800 0%, #ff8800 100%);
+}
+#mainnav > form.search-form input.search-field:focus {
+	background-image: none;
+	width: 150px;
+	color: black;
+	background-color: white;
+	cursor: auto;
+}
+#mainnav > form.search-form input.search-field:focus::-moz-placeholder {
+	color: #555;
+}
+ #mainnav > form.search-form input.search-field:focus:-moz-placeholder {
+ 	color: #555;
+ }
+ #mainnav > form.search-form input.search-field:focus::-webkit-input-placeholder {
+	color: #555;
+}
+
+
+#mainnav > #logosmall {
+	position: absolute;
+	left: 10px;
+	top: 0;
+	width: 40px;
+	height: 100%;
+	background-image: url("images/logosmall_r1.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 40px 40px;
+	display: none;
+}
+
+/* Navigation */
+#mainnav > input[type=checkbox] {
+	display: none;
+}
+#mainnav > label {
+	display: none;
+}
+#mainnav {
+	height: 40px;
+	width: 100%;
+	background-color: white;
+	position: relative;
+	top: 0;
+	left: 0;
+	margin-top: 0px;
+	z-index: 99;
+	padding-left: 10px;
+	padding-right: 40px;
+		margin-bottom: 20px;
+}
+
+#mainnav .subarrow {
+	display: none;
+}
+#mainnav > div > ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+#mainnav > div > ul > li {
+	margin: 0;
+	padding: 0;
+	float: left;
+	overflow: visible;
+	position: relative;
+	left: 0;
+	top: 0;
+}
+#mainnav > div > ul > li > a {
+	color: black;
+	display: block;
+	height: 40px;
+	line-height: 30px;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: white;
+		font-family: PoliticsHead;
+		font-size: 120%;
+}
+#mainnav > div > ul > li:hover > a, #mainnav > div > ul > li > a:focus {
+	background-color: #ff8800;
+	color: white;
+}
+
+#mainnav > div > ul > li > div.lvl > ul {
+	display: none;
+}
+#mainnav > div > ul > li div.lvl > ul {
+	position: absolute;
+	top: 39px;
+	left: 0px;
+		list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background-color: white;
+	z-index: 100;
+}
+#mainnav > div > ul > li:hover > div.lvl > ul, #mainnav > div > ul > li > a:focus ~  div.lvl > ul {
+	display: block;
+
+}
+#mainnav > div > ul > li> $ul > li:focus {
+	display: block;
+}
+#mainnav > div > ul > li > div.lvl > ul li {
+		margin: 0;
+	padding: 0;
+	float: left;
+	overflow: visible;
+	position: relative;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+#mainnav > div > ul > li > div.lvl > ul li > ul, #mainnav > div > ul > li > div.lvl > ul li > a {
+	float: left;
+}
+#mainnav > div > ul > li > div.lvl > ul li > a {
+	color: black;
+	display: inline-block;
+	height: 40px;
+	line-height: 30px;
+	padding: 5px;
+	width: 100%;
+	white-space:nowrap;
+}
+#mainnav > div > ul > li > div.lvl > ul li:hover > a, #mainnav > div > ul > li > div.lvl > ul li.current-menu-item > a, #mainnav > div > ul > li > div.lvl > ul li.current-menu-ancestor > a {
+	color: white;
+	background-color: #ff8800;
+}
+
+
+
+#mainnav > div > ul > li > div.lvl ul > li > div.lvl > ul {
+display: none;
+}	
+#mainnav > div > ul > li > div.lvl ul > li.menu-item-has-children {
+	white-space:nowrap;
+}
+#mainnav > div > ul > li > div.lvl ul > li.menu-item-has-children > a {
+	display: inline-block;
+	width: 100%;
+	float: none;
+}
+#mainnav > div > ul > li > div.lvl ul > li.menu-item-has-children > a > span:before {
+	content: "►";
+	float: right;
+	font-size: 80%;
+}
+#mainnav > div > ul > li > div.lvl ul > li.menu-item-has-children > a > span:after {
+	content: "";
+	text-align: right;
+	display: inline-block;
+	width: 25px;
+	padding-left: 5px;
+}
+#mainnav > div > ul > li > div.lvl ul > li.menu-item-has-children > div.lvl {
+	float: none;
+	display: inline-block;
+	width: 0px;
+	height: 100%;
+	text-align: right;
+	padding: 0;
+	margin: 0;
+	overflow: visible;
+	position: relative;
+	left: 0;
+	right: 0;
+}
+#mainnav > div > ul > li > div.lvl ul > li:hover > div.lvl > ul {
+	display: block;
+}
+#mainnav > div > ul > li > div.lvl ul > li > div.lvl > ul {
+	
+	position: absolute;
+	left: -5px;
+	top: -25px;
+	text-align: left;
+}	
+
+/* Post */
+
+.post.single {
+	margin-bottom: 20px;
+}
+.post.single .post-meta {
+	font-size: 90%;
+}
+.post.single .post-image, .page .post-image {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	width:100%;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	height: 150px;
+	overflow: hidden;
+	background-position:center center;
+	background-size: 100% auto;
+}
+.post.single .post-image > img, .page .post-image > img {
+	width: 100%;
+	height: auto;
+}
+.single .post-content, .page .post-content {
+	//margin-top: 20px;
+}
+
+
+
+
+@media only screen and (max-width: 700px) {
+#mainnav > #logosmall {
+	display: none;
+}
+
+
+#mainnav > input[type=checkbox] {
+	display: block;
+	visibility: hidden;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+#mainnav > label {
+	display: block;
+	height: 40px;
+	padding: 5px;
+	color: black;
+	background-color: white;
+	line-height: 30px;
+	text-align: left;
+	
+}
+#mainnav > label#lmenu2 {
+	display: none;
+}
+#mainnav {
+	position: relative;
+	padding-left: 0;
+	padding-right: 0;
+	height: auto;
+}
+#cbmenu:checked ~ div > ul {
+	max-height: 1000px;
+}
+#mainnav > div > ul > li:first-child:before {
+	content: " ";
+	display: block;
+	height: 1px;
+	width: 100%;
+	background-color: #ddd;
+}
+#cbmenu:checked ~ label#lmenu2 {
+	display: block;
+}
+#cbmenu:checked ~ label#lmenu1 {
+	display: none;
+}
+	#mainnav > div > ul {
+	
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+
+	width: 100%;
+	position: relative;
+	left: 0;
+	max-height: 0;
+	overflow: hidden;
+	transition:max-height 0.5s ease-in-out;
+}
+#mainnav > div > ul > li {
+	margin: 0;
+	padding: 0;
+	float: none;
+	overflow: visible;
+	position: relative;
+	left: 0;
+	top: 0;
+	height: auto;
+}
+#mainnav > div > ul > li > a {
+	color: black;
+	display: block;
+	height: 40px;
+	line-height: 30px;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: white;
+}
+#mainnav > div > ul > li.current-menu-ancestor > a {
+	background-color: white;
+		color: black;
+}
+#mainnav > div > ul > li:hover > a, #mainnav > div > ul > li.current-menu-item > a{
+	background-color: white;
+	color: black;
+}
+#mainnav > div > ul > li > a:hover, #mainnav > div > ul > li.current-menu-item > a{
+	background-color: #ff8800;
+	color: white;
+}
+
+
+/* 2. ebene */
+#mainnav > div > ul > li div.lvl > ul {
+	display: block !important;
+}
+#mainnav > div > ul > li div.lvl > ul {
+	position: relative;
+	box-shadow:  none;
+		list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background-color: white;
+	top: 0;
+	left: 0;
+	margin-left: 20px;
+}
+#mainnav > div > ul > li:hover div.lvl > ul {
+	display: block;
+
+}
+#mainnav div.lvl {
+	height: auto;
+	width: 100% !important;
+	display: block !important;
+}
+#mainnav > div > ul > li > div.lvl > ul li {
+		margin: 0;
+	padding: 0;
+	float: none;
+	overflow: visible;
+	position: relative;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+#mainnav > div > ul > li > div.lvl > ul li > ul, #mainnav > div > ul > li > div.lvl > ul li > a {
+	float: none;
+}
+#mainnav > div > ul > li > div.lvl > ul li > a {
+	color: black;
+	display: block;
+	height: 40px;
+	line-height: 30px;
+	padding: 5px;
+	width: 100%;
+	white-space:nowrap;
+}
+#mainnav > div > ul > li > div.lvl > ul li:hover > a, #mainnav > div > ul > li > div.lvl > ul li.current-menu-ancestor > a {
+	color: black;
+	background-color: white;
+}
+#mainnav > div > ul > li > div.lvl > ul li:hover > a, #mainnav > div > ul > li > div.lvl > ul li.current-menu-item > a {
+	color: white;
+	background-color: #ff8800;
+}
+
+#mainnav > div > ul > li > div.lvl ul > li.menu-item-has-children > a > span:before {
+	content: "";
+	float: none;
+	width: 0;
+	height: 0;
+	font-size: 80%;
+}
+#mainnav > div > ul > li > div.lvl ul > li.menu-item-has-children > a > span:after {
+	content: "";
+	text-align: right;
+	display: inline-block;
+	width: 0px;
+	padding-left: 0px;
+}
+#mainnav > div > ul > li > div.lvl ul > li > div.lvl > ul {
+	position: relative;
+	box-shadow:  none;
+		list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background-color: white;
+	top: 0;
+	left: 0;
+	margin-left: 20px;
+}	
+#mainnav > form.search-form {
+	height: 40px;
+}
+
+div.content, div.contentrow, div.contentrow > div {
+	display: block;
+}
+.cright, .cleft {
+	padding: 0 !important;
+	width: 100% !important;
+	float: none;
+}
+
+header#mainheader a.homelink {
+display: none;
+}
+.extrahomelink {
+	display: block;
+	margin-bottom: 20px;
+	background-color: white;
+	padding: 10px;
+}
+}
+
+.shariff li {
+	padding: 0;
+}
+
+@media only screen and (max-width: 488px) {
+header#mainheader {
+	display: block;
+	width: 100%;
+	height: 0;
+	padding-top: 36%;
+	background-image: url('images/hpheader-crop.png');
+	background-position: right center;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+}	
+}
+@media only screen and (min-width: 200px) {
+body {
+	background-size: 100% auto;
+	}
+	}
