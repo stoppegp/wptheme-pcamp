@@ -25,7 +25,12 @@
 <body>
 <div id="pagecontainer">
 		<header id="mainheader">
-			<a class="homelink" href="<?php bloginfo('url'); ?>"><h1>Piratenpartei</h1><h2>Baden-Württemberg</h2></a>
+			<?php $kandidatenimg = get_theme_mod( 'pcamp_kandidatenimg', 'Piratenpartei' ); 
+			if ($kandidatenimg != "") {?>
+		<img id="headerimage" src="<?php echo get_theme_mod( 'pcamp_kandidatenimg', 'Piratenpartei' ); ?>">
+<?php } ?>
+			<a class="homelink" href="<?php bloginfo('url'); ?>"><h1><?php echo get_theme_mod( 'pcamp_pagetitle', 'Piratenpartei' ); ?>
+</h1><h2><?php echo get_theme_mod( 'pcamp_pagesubtitle', 'Baden-Württemberg' ); ?></h2></a>
 		</header>
 		<a class="extrahomelink" id="extrahomelink" href="<?php bloginfo('url'); ?>"><h1>Piratenpartei</h1><h2>Baden-Württemberg</h2></a>
 		<nav id="mainnav">

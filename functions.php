@@ -63,6 +63,46 @@ $args = array(
 );
 add_theme_support( 'html5', $args );
 
+
+function pcamp_customize_register( $wp_customize ) {
+	$wp_customize->add_setting( 'pcamp_pagetitle' , array(
+	    'default'     => 'Piratenpartei',
+	    'transport'   => 'refresh',
+	) );
+	$wp_customize->add_setting( 'pcamp_pagesubtitle' , array(
+	    'default'     => 'Baden-Württemberg',
+	    'transport'   => 'refresh',
+	) );
+	$wp_customize->add_setting( 'pcamp_kandidatenimg' , array(
+	    'default'     => '',
+	    'transport'   => 'refresh',
+	) );
+$wp_customize->add_section( 'pcamp_pagetitlegroup' , array(
+    'title'      => __( 'Seitenkopf', 'pcamp' ),
+    'priority'   => 30,
+) );
+$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'pcamp_pagetitle', array(
+	'label'        => __( 'Seitentitel', 'mytheme' ),
+	'section'    => 'pcamp_pagetitlegroup',
+	'settings'   => 'pcamp_pagetitle',
+) ) );
+$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'pcamp_pagesubtitle', array(
+	'label'        => __( 'Seitenuntertitel', 'mytheme' ),
+	'section'    => 'pcamp_pagetitlegroup',
+	'settings'   => 'pcamp_pagesubtitle',
+) ) );
+$wp_customize->add_control(        new WP_Customize_Image_Control(
+           $wp_customize,
+           'kandidatenimg',
+           array(
+               'label'      => __( 'Headerbild hochladen', 'pcamp' ),
+               'section'    => 'pcamp_pagetitlegroup',
+               'settings'   => 'pcamp_kandidatenimg',
+           )
+       ) );
+}
+add_action( 'customize_register', 'pcamp_customize_register' );
+
 class pcamp_Nav_Menu extends Walker_Nav_Menu {
 	/**
 	 * @see Walker::start_el()

@@ -135,7 +135,7 @@ hr {
 /* Header */
 header#mainheader {
 	width: 100%;
-	height: 170px;
+	min-height: 170px;
 	position: relative;
 	left: 0;
 	top: 0;
@@ -166,6 +166,17 @@ header#mainheader a.homelink h2, .extrahomelink h2 {
 }
 .extrahomelink {
 	display: none;
+}
+
+header#mainheader img#headerimage {
+	position: relative;
+	width: 170px;
+	left: 10px;
+	bottom: -5px;
+}
+header#mainheader img#headerimage ~ a.homelink {
+	left: 200px;
+	bottom: 27px;
 }
 
 /* Footer */
