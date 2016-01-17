@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Mit Sidebar
+Template Name: Ohne Sidebar
 */
 ?>
 <?php
@@ -10,8 +10,8 @@ $groupslug = get_post_custom_values("_pcamp_groups_group");
 $groupslug = $groupslug[0];
 if (is_array($groupoptions[$groupslug])) {
 	$group = $groupoptions[$groupslug];
-	include('page_group_sidebar.php');
+	include('page_group_nosidebar.php');
 } else {
-	include('page_nogroup_sidebar.php');
+	include('page_nogroup_nosidebar.php');
 }
 ?>

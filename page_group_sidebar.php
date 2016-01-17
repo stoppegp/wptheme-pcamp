@@ -1,26 +1,12 @@
-<?php
-/*
-Template Name: Mit Seiten Sidebar
-*/
-?>
+
 <?php get_header(); ?>
-<?php 
-if ( has_post_thumbnail() ) { 
-  ?>
+
 	<div class="cbanner">
-		<div class="post-image"><?php the_post_thumbnail(); ?></div>
-		<?php
-			$pcustom = get_post_custom_values("_pcamp_caption"); 
-			if (trim($pcustom[0]) != "") {
-			?>
-					<span class="banner-caption"><?php echo $pcustom[0]; ?></span>
-			<?php
-			}
-		?>
+		<div class="post-image">
+		<img src="<?php echo $group['image']; ?>" id="headerlogo"/></div>
+		<span class="banner-caption"><?php echo $group['name']; ?></span>
 	</div>
-  <?php
-} 
-?>
+
 		<div class="content">
 			<div class="contentrow">
 <div class="cleft">
@@ -34,6 +20,5 @@ if ( has_post_thumbnail() ) {
 <?php endwhile; // end of the loop. ?>
         </div></div>
 </div>
-</div>
-<?php get_sidebar('side2'); ?></div></div>
+</div><?php get_sidebar('group'); ?></div></div>
 <?php get_footer(); ?>

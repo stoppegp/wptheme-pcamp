@@ -1,15 +1,14 @@
 <?php get_header(); ?>
 
-<?php 
-if ( has_post_thumbnail() ) { 
-  ?>
-	<div class="cbanner">
-		<div class="post-image"><?php the_post_thumbnail(); ?></div>
+
+	<div class="cbanner longtitle">
 		<span class="banner-caption"><?php the_title(); ?></span>
+		<?php 
+		if ( has_post_thumbnail() ) { 
+		  ?>		
+		<div class="post-image"><?php the_post_thumbnail(); ?></div>
+		<?php } ?>
 	</div>
-  <?php
-} 
-?>
 		
 		<div class="content">
 			<div class="contentrow">
@@ -17,9 +16,11 @@ if ( has_post_thumbnail() ) {
 <?php while ( have_posts() ) : the_post(); ?>
 <div class="post single">	
 	<div>
-		
+		<?php /*
+if ( !has_post_thumbnail() ) { 
+?>
 		<div class="part titlecontainer"><h1 class="post-title"><span><?php the_title(); ?></span></h1></div>
-
+<?php } */ ?>
 		<div class="post-content"><div class="part">
 
 <?php the_content(); ?>

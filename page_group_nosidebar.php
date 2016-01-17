@@ -1,19 +1,15 @@
-<?php
-/*
-Template Name: Kandidaten
-*/
-?>
+
 <?php get_header(); ?>
 
 	<div class="cbanner">
 		<div class="post-image">
-		<img src="<?php bloginfo('template_url'); ?>/res/images/defaultbild-mitmachen.jpg" id="headerlogo"/></div>
-		<span class="banner-caption">Kandidaten</span>
+		<img src="<?php echo $group['image']; ?>" id="headerlogo"/></div>
+		<span class="banner-caption"><?php echo $group['name']; ?></span>
 	</div>
 
 		<div class="content">
 			<div class="contentrow">
-<div class="cleft">
+
 <?php while ( have_posts() ) : the_post(); ?>
 <div class="page">	
 		
@@ -23,6 +19,6 @@ Template Name: Kandidaten
 <?php the_content(); ?>
 <?php endwhile; // end of the loop. ?>
         </div></div>
-</div>
-</div><?php get_sidebar('kandidaten'); ?></div></div>
+
+</div></div></div>
 <?php get_footer(); ?>

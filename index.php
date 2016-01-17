@@ -1,8 +1,9 @@
 <?php get_header(); ?>
 	<div class="cbanner">
+	<span class="banner-caption">Aktuelles</span>
 		<div class="post-image">
+
 		<img src="<?php bloginfo('template_url'); ?>/res/images/defaultbild-presse.jpg" id="headerlogo"/></div>
-	<span class="banner-caption">Neugikeiten</span>
 </div>
 		<div class="content">
 
@@ -19,9 +20,8 @@
 				<?php // The Loop ?>
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					<div class="part">
+						<span class="post-date"><?php the_date(); ?> </span>
 						<h2 class="post-title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-								<div class="post-datum">
-		</div>	
 						<div class="entry">
 							<?php the_content("Weiterlesen... " . the_title('', '', false)); ?>
 						</div>
