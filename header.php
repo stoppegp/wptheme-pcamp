@@ -34,7 +34,6 @@
 		</header>
 		<a class="extrahomelink" id="extrahomelink" href="<?php bloginfo('url'); ?>"><h1>Piratenpartei</h1><h2>Baden-Württemberg</h2></a>
 		<nav id="mainnav">
-		<div id="logosmall"></div>
 		<input type="checkbox" id="cbmenu" /> <label id="lmenu1" for="cbmenu">Menu  &#9660;</label><label id="lmenu2" for="cbmenu">Menu  &#9650;</label>
 
 		<?php // wp_nav_menu( array( 'theme_location' => 'mainmenu' ) ); ?>

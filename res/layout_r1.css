@@ -527,20 +527,6 @@ aside.widget {
 	color: #555;
 }
 
-
-#mainnav > #logosmall {
-	position: absolute;
-	left: 10px;
-	top: 0;
-	width: 40px;
-	height: 100%;
-	background-image: url("images/logosmall_r1.png");
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: 40px 40px;
-	display: none;
-}
-
 /* Navigation */
 #mainnav > input[type=checkbox] {
 	display: none;
