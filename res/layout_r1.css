@@ -176,6 +176,7 @@ h1 {
 h2 {
 	font-size: 140%;
 	margin: 0;
+	font-family: Roboto;
 }
 h2.post-title, h2.post-title a {
 	font-family: Roboto;
@@ -694,9 +695,6 @@ display: none;
 
 /* Post */
 
-.post.single {
-	margin-bottom: 20px;
-}
 .post.single .post-meta {
 	font-size: 90%;
 }
@@ -952,6 +950,21 @@ display: none;
 	padding: 0;
 }
 
+/* Kommentare */
+
+ol.commentlist, ol.commentlist ol {
+
+}
+ol.commentlist > li li {
+	padding-left: 6px;
+	margin-bottom: 10px;
+}
+ol.commentlist .comment-author {
+	font-family: Roboto;
+}
+ol.commentlist .comment-body p {
+	margin-top: 2px;
+}
 @media only screen and (max-width: 488px) {
 header#mainheader {
 	display: block;
