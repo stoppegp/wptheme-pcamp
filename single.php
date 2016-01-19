@@ -29,7 +29,7 @@ if ( !has_post_thumbnail() ) {
     </div>
 		
 </div>
-<?php if (comments_open()) { ?>
+<?php if (comments_open() || get_comments_number()) { ?>
 <div class="part">
 	<?php comments_template(); ?>
 </div>
@@ -41,9 +41,9 @@ if ( !has_post_thumbnail() ) {
 						Veröffentlicht am <?=get_the_time('j. F Y');?> um <?=get_the_time('H:i');?> Uhr<?php
 		if (get_the_category()) { ?> unter <?php the_category(', '); ?><?php } ?><?php the_tags(" und tagged ", ', ', ""); ?>.		
 			</aside>
-			<?php if (!comments_open()) { ?>
+	<?php if ( ! comments_open() && ! get_comments_number() ) { ?>
 <aside class="widget">
-	<?php comments_template(); ?>
+<p>Kommentare sind für diesen Beitrag deaktiviert.</p>
 </aside>
 <?php } ?>
 			<?php get_sidebar('single'); ?>

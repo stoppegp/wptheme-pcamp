@@ -40,7 +40,7 @@ Kommentare
 		<?php endif; // Check for comment navigation ?>
 
 		<?php if ( ! comments_open() && get_comments_number() ) : ?>
-		<p class="no-comments"><?php _e( 'Comments are closed.' , 'pcamp' ); ?></p>
+		<p class="no-comments">Dieser Beitrag kann nicht mehr kommentiert werden.</p>
 		<?php endif; ?>
 
 	<?php endif; // have_comments() ?>
