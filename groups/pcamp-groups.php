@@ -68,7 +68,7 @@ class pcamp_groups {
 		if (is_array($options) && (count($options) > 0)) {
 			foreach ($options as $slug => $c) {
 				register_sidebar( array(
-					'name' => __( $c['name'], 'pcamp' ),
+					'name' => __( "Gruppe: ".$c['name'], 'pcamp' ),
 					'id' => 'sidebar-pcamp-groups-'.$slug,
 					'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 					'after_widget' => "</aside>",

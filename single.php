@@ -46,6 +46,7 @@ if ( !has_post_thumbnail() ) {
 	<?php comments_template(); ?>
 </aside>
 <?php } ?>
+			<?php get_sidebar('single'); ?>
 			</div>
 </div>
 </div>

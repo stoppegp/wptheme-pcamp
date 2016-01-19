@@ -3,8 +3,16 @@ include('groups/pcamp-groups.php');
 
 function pcamp_widgets_init() {
 	register_sidebar( array(
-		'name' => __( 'Artikel-Sidebar', 'pcamp' ),
+		'name' => __( 'Artikelübersicht-Sidebar', 'pcamp' ),
 		'id' => 'sidebar-side',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => "</aside>",
+		'before_title' => '<div class="widget-title">',
+		'after_title' => '</div>',
+	) );
+	register_sidebar( array(
+		'name' => __( 'Einzelartikel-Sidebar', 'pcamp' ),
+		'id' => 'sidebar-single',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<div class="widget-title">',
