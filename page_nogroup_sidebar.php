@@ -6,7 +6,6 @@ if ( has_post_thumbnail() ) {
 		<div class="post-image"><?php the_post_thumbnail(); ?></div>
 
 				<span class="banner-caption"><?php the_title(); ?></span>
-
 	</div>
   <?php
 }  else {

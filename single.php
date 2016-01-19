@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 
-	<div class="cbanner longtitle">
+	<div class="cbanner longtitle <?php echo (has_post_thumbnail())?"":"titleonly"; ?> ">
 		<span class="banner-caption"><?php the_title(); ?></span>
 		<?php 
 		if ( has_post_thumbnail() ) { 

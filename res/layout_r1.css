@@ -20,6 +20,10 @@ body {
 	
 }
 
+input {
+	font-family: RobotoLight, sans-serif;
+}
+
 /*#wrapper {
 	max-width: 1200px;
 	width: 95%;
