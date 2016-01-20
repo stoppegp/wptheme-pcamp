@@ -179,7 +179,25 @@ h3 {
 	font-size: 105%;
 	margin: 0;
 }
-
+h4 {
+	font-family: RobotoLight;
+	font-weight: bold;
+	font-size: 100%;
+}
+.part > h1, .part > h2, .part > h3, .part > h4 {
+	margin-top: 20px;
+	margin-bottom: 18px;
+}
+.part > h1:first-child, .part > h2:first-child, .part > h3:first-child, .part > h4:first-child {
+	margin-top: 0;
+}
+.part > h1:last-child, .part > h2:last-child, .part > h3:last-child, .part > h4:last-child {
+	margin-bottom: 0;
+}
+.part p {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
 .alignright {
 	float: right;
 	padding: 5px;
