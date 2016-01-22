@@ -1,4 +1,7 @@
 <?php get_header(); ?>
+	<div class="cbanner longtitle titleonly">
+		<span class="banner-caption">Suchergebnisse</span>
+	</div>
 			<div class="content">
 			<div class="contentrow">
 			<div class="cleft">		
@@ -12,13 +15,10 @@ if ($resultc > 0) {
 				<?php // The Loop ?>
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					<div class="part">
-						<h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-								<div class="post-datum">
-				<?php
-				$infostring = translate("Vom")." ".get_the_time('j. F Y').", ".get_the_time('H:i')." ".translate("Uhr");
-				echo $infostring;
-				?>
-		</div>	
+						<?php if (get_post_type() == "post") { ?>
+						<span class="post-date"><?php the_date(); ?> </span>
+						<?php } ?>
+						<h2 class="post-title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
 						<div class="entry">
 							<?php the_excerpt(); ?>
 						</div>
