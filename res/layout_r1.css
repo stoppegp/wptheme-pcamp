@@ -3,6 +3,7 @@ html {
 }
 *, *:before, *:after {
   box-sizing: inherit;
+    box-sizing: border-box !important;
 }
 
 header, nav, section, article, aside, footer {
@@ -48,11 +49,11 @@ input {
 
 @font-face {
   font-family: 'Roboto';
-    src: url('fonts/Roboto-Italic-webfont.eot');
-    src: url('fonts/Roboto-Italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/Roboto-Italic-webfont.woff') format('woff'),
-         url('fonts/Roboto-Italic-webfont.ttf') format('truetype'),
-         url('fonts/Roboto-Italic-webfont.svg') format('svg');
+    src: url('fonts/Roboto-Italic.eot');
+    src: url('fonts/Roboto-Italic.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Roboto-Italic.woff') format('woff'),
+         url('fonts/Roboto-Italic.ttf') format('truetype'),
+         url('fonts/Roboto-Italic.svg') format('svg');
   font-weight: normal;
   font-style: italic; 
 }
@@ -478,7 +479,7 @@ aside.widget ul.menu li {
 }
 aside.widget ul.menu li > a {
 	display: block;
-	background-color: #ff8800;
+	background-color: #ffddcc;
 	background-color: rgba(255,136,0,.1);
 	padding-left: 10px;
 	padding-right: 10px;
