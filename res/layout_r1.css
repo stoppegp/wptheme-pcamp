@@ -5,6 +5,9 @@ html {
   box-sizing: inherit;
 }
 
+header, nav, section, article, aside, footer {
+   display:block;
+}
 
 body {
 	margin: 0;
