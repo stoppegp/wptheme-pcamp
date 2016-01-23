@@ -435,6 +435,15 @@ aside .widget-title {
 	float: right;
 }
 
+img.alignleft {
+	float: left;
+	margin: 10px;
+}
+img.alignright {
+	float: right;
+	margin: 10px;
+}
+
 aside.widget ul.menu, div.part ul.menu {
 	list-style-type: none;
 	width: 100%;
