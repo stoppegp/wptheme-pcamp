@@ -62,7 +62,6 @@ function pcamp_latestpost( $atts, $content="" ) {
 	$ret = '<span class="post-date">Neueste Meldung vom '.get_the_date(null, $postid).'</span>';
 	$ret .= '<h2 class="post-title"><a href="'.get_the_permalink($postid).'">'.get_the_title($postid).'</a></h2>';
 	$ret .= '<div class="entry">'.$content.'</div>';
-	print_r($recent_post);
 	 return $ret;
 }
 function breakpart() {
