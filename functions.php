@@ -53,11 +53,24 @@ function pcamp_sidebar( $atts, $content="" ) {
 	 $PCAMP_SIDEBAR[] = $array;
 	 return "";
 }
+function pcamp_latestpost( $atts, $content="" ) {
+	$recent_post = wp_get_recent_posts( array('numberposts' => 1, 'post_type' => 'post'));
+	$postid = $recent_post[0]['ID'];
+	$content = $recent_post[0]['post_content'];
+	
+	
+	$ret = '<span class="post-date">Neueste Meldung vom '.get_the_date(null, $postid).'</span>';
+	$ret .= '<h2 class="post-title"><a href="'.get_the_permalink($postid).'">'.get_the_title($postid).'</a></h2>';
+	$ret .= '<div class="entry">'.$content.'</div>';
+	print_r($recent_post);
+	 return $ret;
+}
 function breakpart() {
 	return "</div><div class=\"part\">";
 }
 add_shortcode( 'pcamp-sidebar', 'pcamp_sidebar' );
 add_shortcode( 'breakpart', 'breakpart' );
+add_shortcode( 'pcamp-latestpost', 'pcamp_latestpost' );
 add_action( 'widgets_init', 'pcamp_widgets_init' );
 add_action( 'init', 'register_my_menus' );
 add_filter('widget_text', 'do_shortcode');
