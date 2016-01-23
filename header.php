@@ -24,16 +24,16 @@
 </head>
 <body>
 <div id="pagecontainer">
-		<div class="ieheader" id="mainheader">
+		<header id="mainheader">
 			<?php $kandidatenimg = get_theme_mod( 'pcamp_kandidatenimg', 'Piratenpartei' ); 
 			if ($kandidatenimg != "") {?>
 		<img id="headerimage" src="<?php echo get_theme_mod( 'pcamp_kandidatenimg', 'Piratenpartei' ); ?>">
 <?php } ?>
 			<a class="homelink" href="<?php bloginfo('url'); ?>"><h1><?php echo get_theme_mod( 'pcamp_pagetitle', 'Piratenpartei' ); ?>
 </h1><h2><?php echo get_theme_mod( 'pcamp_pagesubtitle', 'Baden-Württemberg' ); ?></h2></a>
-		</div>
+		</header>
 		<a class="extrahomelink" id="extrahomelink" href="<?php bloginfo('url'); ?>"><h1>Piratenpartei</h1><h2>Baden-Württemberg</h2></a>
-		<div class="ienav" id="mainnav">
+		<nav id="mainnav">
 		<input type="checkbox" id="cbmenu" /> <label id="lmenu1" for="cbmenu">Menu  &#9660;</label><label id="lmenu2" for="cbmenu">Menu  &#9650;</label>
 
 		<?php // wp_nav_menu( array( 'theme_location' => 'mainmenu' ) ); ?>
@@ -44,7 +44,7 @@
                                     'walker'=> new pcamp_Nav_Menu()
                                     ) ); ?>
 		<?php get_search_form(); ?>
-		</div>
+		</nav>
 		
 	<div id="wrapper">
 

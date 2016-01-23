@@ -228,7 +228,7 @@ hr {
 }
 
 /* Header */
-div.ieheader#mainheader {
+header#mainheader {
 	width: 100%;
 	min-height: 170px;
 	position: relative;
@@ -240,19 +240,19 @@ div.ieheader#mainheader {
 	background-position: right bottom;
 	background-repeat: no-repeat;
 }
-div.ieheader#mainheader a.homelink {
+header#mainheader a.homelink {
 	display: block;
 	position: absolute;
 	left: 20px;
 	bottom: 20px;
 }	
-div.ieheader#mainheader a.homelink h1, .extrahomelink h1 {
+header#mainheader a.homelink h1, .extrahomelink h1 {
 	font-family: PoliticsHead;
 	font-size: 200%;
 	color: black;
 	font-weight: normal;
 }
-div.ieheader#mainheader a.homelink h2, .extrahomelink h2 {
+header#mainheader a.homelink h2, .extrahomelink h2 {
 	font-family: Roboto;
 	font-size: 120%;
 	color: black;
@@ -263,13 +263,13 @@ div.ieheader#mainheader a.homelink h2, .extrahomelink h2 {
 	display: none;
 }
 
-div.ieheader#mainheader img#headerimage {
+header#mainheader img#headerimage {
 	position: relative;
 	width: 170px;
 	left: 10px;
 	bottom: -5px;
 }
-div.ieheader#mainheader img#headerimage ~ a.homelink {
+header#mainheader img#headerimage ~ a.homelink {
 	left: 200px;
 	bottom: 27px;
 }
@@ -938,7 +938,7 @@ div.content, div.contentrow, div.contentrow > div {
 	float: none;
 }
 
-div.ieheader#mainheader a.homelink {
+header#mainheader a.homelink {
 display: none;
 }
 .extrahomelink {
@@ -978,7 +978,7 @@ display: none;
 
 
 @media only screen and (max-width: 488px) {
-div.ieheader#mainheader {
+header#mainheader {
 	display: block;
 	width: 100%;
 	height: 0;
