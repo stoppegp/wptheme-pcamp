@@ -231,6 +231,13 @@ hr {
 	margin-left: auto;
 	margin-right: auto;
 }
+#iecontainer {
+	max-width: 1044px;
+	width: 100%;
+	padding: 0px;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 /* Header */
 header#mainheader {
@@ -509,17 +516,19 @@ aside.widget {
 	display: none;
 }
 #mainnav > form.search-form input.search-field {
-	background-image: url('images/search_r1.png'), linear-gradient(90deg, #fff 0%, #fff 100%);
+	background: white;
+	background-image: url('images/search_r1.png');
+	/*background-image: url('images/search_r1.png'), linear-gradient(90deg, #fff 0%, #fff 100%);*/
 	background-repeat: no-repeat, no-repeat;
 	background-position: right center, right center;
 	background-size: 36px auto, 36px auto;
 	width: 36px;
 	border: none;
 	border-left: 1px solid #ddd;
-	transition: all 0.5s ease-in-out;
+	transition: width 0.5s ease-in-out;
 	color: white;
 	color: rgba(255, 255, 255, 0);
-	height: 100%;
+	height: 99%;
 	cursor: pointer;
 	z-index: 106;
 }
@@ -536,7 +545,9 @@ aside.widget {
 	transition: color 0.5s ease-in-out;
 }
 #mainnav > form.search-form input.search-field:hover {
-		background-image: url('images/search2_r1.png'), linear-gradient(90deg, #ff8800 0%, #ff8800 100%);
+		background: #ff8800;
+		background-image: url('images/search2_r1.png');
+/*		background-image: url('images/search2_r1.png'), linear-gradient(90deg, #ff8800 0%, #ff8800 100%);*/
 }
 #mainnav > form.search-form input.search-field:focus {
 	background-image: none;

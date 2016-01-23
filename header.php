@@ -33,6 +33,7 @@
     <?php wp_head(); ?>
 </head>
 <body>
+<div id="iecontainer">
 <div id="pagecontainer">
 		<header id="mainheader">
 			<?php $kandidatenimg = get_theme_mod( 'pcamp_kandidatenimg', 'Piratenpartei' ); 
