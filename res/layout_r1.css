@@ -380,7 +380,7 @@ div.part, aside.widget {
 	background: rgba(255, 255, 255, 1);
 	margin-bottom: 10px;
 	padding: 25px;
-	overflow: auto;
+	overflow: hidden;
 }
 .content .part {
 	margin-bottom: 10px;
