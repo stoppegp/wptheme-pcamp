@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title><?php wp_title( '»', true, "right" ); ?> <?php bloginfo('name'); ?></title>
-	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/res/layout_r1.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/res/layout_r2.css" type="text/css" media="all" />
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	<link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('template_url'); ?>/res/favicon_r1.ico" />
 	<script src="<?php bloginfo('template_url'); ?>/res/jquery-1.11.1.min.js"></script>
