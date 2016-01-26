@@ -364,8 +364,9 @@ div.cbanner.titleonly {
 div.cbanner .post-image img { 
 	width: 100%;
 	height: auto;
-	margin-top: -20%;
-	margin-bottom: -5px;
+	position: absolute;
+	left: 0;
+	top: 0;
 }
 div.cbanner .banner-caption, div.cbanner h1.post-title {
 	display: inline-block;
@@ -376,6 +377,9 @@ div.cbanner .banner-caption, div.cbanner h1.post-title {
 	position: absolute;
 	left: 25px;
 	bottom: 20px;
+}
+.cbanner .banner-caption {
+	z-index: 99;
 }
 div.cbanner.titleonly .banner-caption, div.cbanner.titleonly h1.post-title {
 	display: inline;
@@ -982,13 +986,15 @@ display: none;
 
 .cbanner {
 	height: auto !important;
+	min-height: 80px;
 }
-
+.cbanner.titleonly {
+	min-height: 0;
+}
 .cbanner.longtitle {
 	height: auto !important;
 	padding: 0 !important;
 	margin-top: 0 !important;
-
 }
 
 .cbanner.longtitle .banner-caption {
@@ -1003,8 +1009,13 @@ display: none;
 .cbanner.longtitle .post-image {
 	margin-top: 10px;
 }
+.cbanner .post-image img {
+		min-width: 400px;
+}
 .cbanner.longtitle .post-image img {
 	margin-top: 0 !important;
+		margin-bottom: -5px;
+	position: relative;
 }
 }
 
