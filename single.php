@@ -36,6 +36,38 @@ if ( !has_post_thumbnail() ) {
 <?php } ?>
 </div>
 			<div class="cright">
+       <?php
+		$custom_fields = get_post_custom();
+        if (  
+		( isset($custom_fields['text']) && isset($custom_fields['image_url']) && 
+		   ($custom_fields['image_url'][0]<>'') && ($custom_fields['text'][0]<>'')))             
+            {   ?>
+			<aside class="widget">
+            <div id="steckbrief">
+                
+                <?php
+                if ($custom_fields['link'][0]<>'') {
+                    echo '<a href="'.$custom_fields['link'][0].'" class="steckbrief-link">';
+                }
+                if ($custom_fields['title'][0]<>'') {
+                    echo '<span class="widget-title">'.$custom_fields['title'][0]."</span>";
+                }
+                if (isset($custom_fields['image_url']) &&  $custom_fields['image_url'][0]<>'') {
+                    echo wp_get_attachment_image( $custom_fields['image_url'][0], array(300,300) ); 
+                } ?>
+                
+                <span class="text">
+                     <?php echo do_shortcode(get_post_meta($post->ID, 'text', $single = true)); ?>
+                </span>
+                <?php
+                if ($custom_fields['link'][0]<>'') {
+                    echo '</a>';
+                }
+                ?>
+           </div>
+           </aside>
+           <?php 
+        }  ?>
 			<?php get_sidebar('pcamp'); ?>		
 			<aside class="widget">
 						Veröffentlicht am <?=get_the_time('j. F Y');?> um <?=get_the_time('H:i');?> Uhr<?php

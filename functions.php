@@ -245,4 +245,72 @@ function pcamp_comment($comment, $args, $depth) {
 	<?php endif; ?>
 <?php
 }
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_steckbrief',
+		'title' => 'Steckbrief',
+		'fields' => array (
+			array (
+				'key' => 'field_5159329a6f885',
+				'label' => 'desc',
+				'name' => 'desc',
+				'type' => 'message',
+				'message' => 'Wenn Text und Bild angegeben sind, wird neben dem Artikel ein Steckbrief angezeigt.',
+			),
+			array (
+				'key' => 'field_5159319f55ff7',
+				'label' => 'Text',
+				'name' => 'text',
+				'type' => 'textarea',
+				'default_value' => '',
+				'formatting' => 'html',
+			),
+			array (
+				'key' => 'field_5159316655ff6',
+				'label' => 'Bild',
+				'name' => 'image_url',
+				'type' => 'image',
+				'save_format' => 'id',
+				'preview_size' => 'thumbnail',
+			),
+			array (
+				'key' => 'field_515931c655ff8',
+				'label' => 'Titel',
+				'name' => 'title',
+				'type' => 'text',
+				'instructions' => 'z.B. Name des Autors',
+				'default_value' => '',
+				'formatting' => 'none',
+			),
+			array (
+				'key' => 'field_515931d755ff9',
+				'label' => 'Link',
+				'name' => 'link',
+				'type' => 'text',
+				'instructions' => 'Wenn angeben, wird die komplette Steckbrief-Box verlinkt.',
+				'default_value' => '',
+				'formatting' => 'none',
+			),
+		),
+		'location' => array (
+			'rules' => array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'post',
+					'order_no' => 0,
+				),
+			),
+			'allorany' => 'all',
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+}
 ?>

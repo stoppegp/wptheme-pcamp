@@ -410,6 +410,7 @@ aside .widget-title {
 	font-family: PoliticsHead;
 	margin-bottom: 20px;
 	text-align: right;
+	display: block;
 }
 .post-content {
 	margin-top: 0;
@@ -498,6 +499,17 @@ aside.widget ul.menu li:hover {
 aside.widget {
 	font-size: 90%;
 }
+
+/* Steckbrief */
+a.steckbrief-link {
+	color: black;
+	display: block;
+}
+#steckbrief .text {
+	font-family: RobotoLight !important;
+	font-style: italic;
+}
+
 /* Suche */
 
 #mainnav > form.search-form {
