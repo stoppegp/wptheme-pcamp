@@ -449,7 +449,7 @@ aside .widget-title {
 	float: right;
 }
 
-.part img {
+.part img, aside.widget img {
 	max-width: 100%;
 }
 
