@@ -449,6 +449,10 @@ aside .widget-title {
 	float: right;
 }
 
+.part img {
+	max-width: 100%;
+}
+
 img.alignleft {
 	float: left;
 	margin: 10px;
