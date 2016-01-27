@@ -26,14 +26,6 @@ function pcamp_widgets_init() {
 		'before_title' => '<div class="widget-title">',
 		'after_title' => '</div>',
 	) );
-	register_sidebar( array(
-		'name' => __( 'Header-Sidebar', 'pcamp' ),
-		'id' => 'sidebar-header',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<div class="widget-title">',
-		'after_title' => '</div>',
-	) );
 }
 
 
