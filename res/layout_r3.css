@@ -517,6 +517,7 @@ a.steckbrief-link {
 #steckbrief .text {
 	font-family: RobotoLight !important;
 	font-style: italic;
+	display: block;
 }
 
 /* Suche */
