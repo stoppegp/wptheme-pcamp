@@ -455,6 +455,7 @@ aside .widget-title {
 
 .part img, aside.widget img {
 	max-width: 100%;
+	height: auto;
 }
 
 img.alignleft {
