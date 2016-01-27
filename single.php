@@ -57,7 +57,7 @@ if ( !has_post_thumbnail() ) {
                 } ?>
                 
                 <span class="text">
-                     <?php echo do_shortcode(get_post_meta($post->ID, 'text', $single = true)); ?>
+                     <?php echo nl2br(do_shortcode(get_post_meta($post->ID, 'text', $single = true))); ?>
                 </span>
                 <?php
                 if ($custom_fields['link'][0]<>'') {
