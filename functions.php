@@ -305,4 +305,8 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));
 }
+function get_theme_dir() {
+	$url = get_bloginfo('template_url');
+	return parse_url($url, PHP_URL_PATH);
+}
 ?>
