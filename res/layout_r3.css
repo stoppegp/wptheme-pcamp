@@ -16,8 +16,7 @@ body {
 	background-color: #ff8800;
 	font-size: 15px;
 	font-family: RobotoLight, sans-serif;
-	background-image: url('images/hpbg.jpg');
-	background-image: url('https://piratenpartei-bw.de/wp-content/themes/Piratenkleider-GP-master/images/int/bg-tags.png');
+	background-image: url('images/bg-tags.png');
 	background-position: center top;
 	background-attachment: fixed;
 	
