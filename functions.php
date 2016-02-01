@@ -48,7 +48,7 @@ function pcamp_sidebar( $atts, $content="" ) {
 function pcamp_latestpost( $atts, $content="" ) {
 	$recent_post = wp_get_recent_posts( array('numberposts' => 1, 'post_type' => 'post', 'post_status' => 'publish'));
 	$postid = $recent_post[0]['ID'];
-	$content = $recent_post[0]['post_content'];
+	$content = apply_filters("the_content", $recent_post[0]['post_content']);
 	
 	
 	$ret = '<span class="post-date">Neueste Meldung vom '.get_the_date(null, $postid).'</span>';
