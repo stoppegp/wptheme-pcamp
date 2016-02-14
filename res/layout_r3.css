@@ -587,6 +587,11 @@ a.steckbrief-link {
 	color: #555;
 }
 
+select {
+	padding: 5px;
+	background-color: white;
+}
+
 /* Navigation */
 #mainnav > input[type=checkbox] {
 	display: none;
