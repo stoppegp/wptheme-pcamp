@@ -1,5 +1,6 @@
 <?php
 include('groups/pcamp-groups.php');
+include('addtopbox.php');
 
 function pcamp_widgets_init() {
 	register_sidebar( array(
@@ -46,7 +47,7 @@ function pcamp_sidebar( $atts, $content="" ) {
 	 return "";
 }
 function pcamp_latestpost( $atts, $content="" ) {
-	$recent_post = wp_get_recent_posts( array('numberposts' => 1, 'post_type' => 'post', 'post_status' => 'publish'));
+	$recent_post = wp_get_recent_posts( array('numberposts' => 1, 'post_type' => 'post', 'post_status' => 'publish', 'meta_key' => '_pcamp_top', 'meta_value' => 'false', 'meta_compare' => '!='));
 	$postid = $recent_post[0]['ID'];
 	$content = apply_filters("the_content", $recent_post[0]['post_content']);
 	
