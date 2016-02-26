@@ -15,7 +15,7 @@ body {
 	padding: 0;
 	background-color: #ff8800;
 	font-size: 15px;
-	font-family: RobotoLight, sans-serif;
+	font-family: 'RobotoLight', sans-serif;
 	background-image: url('images/bg-tags.png');
 	background-position: center top;
 	background-attachment: fixed;
@@ -24,7 +24,7 @@ body {
 }
 
 input {
-	font-family: RobotoLight, sans-serif;
+	font-family: 'RobotoLight', sans-serif;
 }
 
 /*#wrapper {
@@ -149,7 +149,7 @@ padding: 0.2em 0px 0.2em 0.2em;
 a {
 	color: #ff8800;
 	text-decoration: none;
-	font-family: "Roboto";
+	font-family: 'Roboto', sans-serif;
 }
 a:hover, a:focus {
 	opacity: .8;
@@ -165,7 +165,7 @@ a:focus {
 h1 {
 	font-size: 160%;
 	margin: 0;
-	font-family: PoliticsHead;
+	font-family: 'PoliticsHead', sans-serif;
 	font-weight: normal;
 }
 h2 {
@@ -174,18 +174,18 @@ h2 {
 	font-family: Roboto;
 }
 h2.post-title, h2.post-title a {
-	font-family: Roboto;
+	font-family: 'Roboto', sans-serif;
 	font-weight: bold;
 	margin-top: 0 !important;
 	color: black;
 }
 h3 {
-	font-family: Roboto;
+	font-family: 'Roboto', sans-serif;
 	font-size: 105%;
 	margin: 0;
 }
 h4 {
-	font-family: RobotoLight;
+	font-family: 'RobotoLight', sans-serif;
 	font-weight: bold;
 	font-size: 100%;
 }
@@ -258,13 +258,13 @@ header#mainheader a.homelink {
 	bottom: 20px;
 }	
 header#mainheader a.homelink h1, .extrahomelink h1 {
-	font-family: PoliticsHead;
+	font-family: 'PoliticsHead', sans-serif;
 	font-size: 200%;
 	color: black;
 	font-weight: normal;
 }
 header#mainheader a.homelink h2, .extrahomelink h2 {
-	font-family: Roboto;
+	font-family: 'Roboto', sans-serif;
 	font-size: 120%;
 	color: black;
 	font-weight: normal;
@@ -369,7 +369,7 @@ div.cbanner .post-image img {
 }
 div.cbanner .banner-caption, div.cbanner h1.post-title {
 	display: inline-block;
-	font-family: PoliticsHead;
+	font-family: 'PoliticsHead', sans-serif;
 	font-size: 150%;
 	padding: 7px;
 	background-color: white;
@@ -410,7 +410,7 @@ div.part > p:last-child, .post-content > p:last-child, aside.widget > p:last-chi
 aside .widget-title {
 	font-size: 140%;
 	font-weight: bold;
-	font-family: PoliticsHead;
+	font-family: 'PoliticsHead', sans-serif;
 	margin-bottom: 20px;
 	text-align: right;
 	display: block;
@@ -640,7 +640,7 @@ select {
 	padding-left: 10px;
 	padding-right: 10px;
 	background-color: white;
-		font-family: PoliticsHead;
+		font-family: 'PoliticsHead', sans-serif;
 		font-size: 120%;
 }
 #mainnav > div > ul > li:hover > a, #mainnav > div > ul > li > a:focus {
@@ -782,7 +782,7 @@ ol.commentlist > li li {
 	margin-bottom: 10px;
 }
 ol.commentlist .comment-author {
-	font-family: Roboto;
+	font-family: 'Roboto', sans-serif;
 }
 ol.commentlist .comment-body p {
 	margin-top: 2px;
