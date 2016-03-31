@@ -65,7 +65,7 @@ if ( !has_post_thumbnail() ) {
             </div>
             </aside>
 			<?php
-			}
+			} else {
 			?>
 			
        <?php
@@ -99,7 +99,7 @@ if ( !has_post_thumbnail() ) {
            </div>
            </aside>
            <?php 
-        }  ?>
+        } }  ?>
 			<?php get_sidebar('pcamp'); ?>		
 			<aside class="widget">
 						Veröffentlicht am <?=get_the_time('j. F Y');?> um <?=get_the_time('H:i');?> Uhr<?php

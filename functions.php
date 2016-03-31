@@ -271,6 +271,75 @@ function pcamp_comment($comment, $args, $depth) {
 	<?php endif; ?>
 <?php
 }
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_steckbrief',
+		'title' => 'Steckbrief',
+		'fields' => array (
+			array (
+				'key' => 'field_5159329a6f885',
+				'label' => 'desc',
+				'name' => 'desc',
+				'type' => 'message',
+				'message' => 'Wenn Name und Bild angegeben sind, wird neben dem Artikel ein Steckbrief angezeigt. Alternativ kann der Steckbrief des Post-Autoren angezeigt werden (rechts unter "Autor-Sichtbarkeit")',
+			),
+			array (
+				'key' => 'field_5159319f55ff7',
+				'label' => 'Name des Autors',
+				'name' => 'text',
+				'type' => 'text',
+				'default_value' => '',
+				'formatting' => 'html',
+			),
+			array (
+				'key' => 'field_5159316655ff6',
+				'label' => 'Bild des Autors',
+				'name' => 'image_url',
+				'type' => 'image',
+				'save_format' => 'id',
+				'preview_size' => 'thumbnail',
+			),
+			array (
+				'key' => 'field_515931d755ff9',
+				'label' => 'Link',
+				'name' => 'link',
+				'type' => 'text',
+				'instructions' => 'Wenn angeben, wird die komplette Steckbrief-Box verlinkt.',
+				'default_value' => '',
+				'formatting' => 'none',
+			),
+		),
+		'location' => array (
+			'rules' => array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'post',
+					'order_no' => 0,
+				),
+			),
+			'allorany' => 'all',
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+}
+add_action('acf/input/admin_head', 'my_acf_input_admin_head');
+function my_acf_input_admin_head() {
+?>
+<script type="text/javascript">
+jQuery(function(){
+  jQuery('.acf_postbox').addClass('closed');
+});
+</script>
+<?php
+}
 function get_theme_dir() {
 	$url = get_bloginfo('template_url');
 	return parse_url($url, PHP_URL_PATH);
