@@ -36,7 +36,7 @@
 <div id="iecontainer">
 <div id="pagecontainer">
 		<header id="mainheader">
-			<?php $kandidatenimg = get_theme_mod( 'pcamp_kandidatenimg', 'Piratenpartei' ); 
+			<?php $kandidatenimg = get_theme_mod( 'pcamp_kandidatenimg', '' ); 
 			if ($kandidatenimg != "") {?>
 		<img id="headerimage" src="<?php echo get_theme_mod( 'pcamp_kandidatenimg', 'Piratenpartei' ); ?>">
 <?php } ?>
