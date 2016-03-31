@@ -49,12 +49,43 @@ function pcamp_sidebar( $atts, $content="" ) {
 function pcamp_latestpost( $atts, $content="" ) {
 	$recent_post = wp_get_recent_posts( array('numberposts' => 1, 'post_type' => 'post', 'post_status' => 'publish', 'meta_key' => '_pcamp_top', 'meta_value' => 'false', 'meta_compare' => '!='));
 	$postid = $recent_post[0]['ID'];
-	$content = apply_filters("the_content", $recent_post[0]['post_content']);
-	
-	
-	$ret = '<span class="post-date">Neueste Meldung vom '.get_the_date(null, $postid).'</span>';
+	setup_postdata( $GLOBALS['post'] =& get_post($postid) );
+	$content = apply_filters('the_content',get_the_content(null, false));
+	$ret = '<span class="post-date">Top-Meldung vom '.get_the_date(null, $postid).'</span>';
 	$ret .= '<h2 class="post-title"><a href="'.get_the_permalink($postid).'">'.get_the_title($postid).'</a></h2>';
 	$ret .= '<div class="entry">'.$content.'</div>';
+	 return $ret;
+}
+function pcamp_latestpostslist( $atts, $content="" ) {
+	$nr = 5;
+	
+	$recent_post = wp_get_recent_posts( array('numberposts' => 6, 'post_type' => 'post', 'post_status' => 'publish'));
+	
+	$goon = true;
+	$c = -1;
+	$d = 0;
+	
+	$ret = "<ul>";
+	$topd = false;
+	while ($goon) {
+		$c++;
+		$postid = $recent_post[$c]['ID'];
+		if (!is_array($recent_post[$c])) { $goon = false; break; }
+		$top = get_post_meta ( $recent_post[$c]['ID'], "_pcamp_top", true );
+		echo $top;
+		echo $c;
+		echo ".";
+		if (($top != "false") && !$topd) {
+			$topd = true;
+			//echo $c;
+			continue;
+		}
+		$ret .= "<li><a href=\"".get_permalink($postid)."\">".$recent_post[$c]['post_title']."</a></li>";
+		$d++;
+		
+		if ($d >= $nr) $goon = false;
+	}
+		$ret .= "</ul>";
 	 return $ret;
 }
 function breakpart() {
@@ -63,6 +94,7 @@ function breakpart() {
 add_shortcode( 'pcamp-sidebar', 'pcamp_sidebar' );
 add_shortcode( 'breakpart', 'breakpart' );
 add_shortcode( 'pcamp-latestpost', 'pcamp_latestpost' );
+add_shortcode( 'pcamp-latestpostslist', 'pcamp_latestpostslist' );
 add_action( 'widgets_init', 'pcamp_widgets_init' );
 add_action( 'init', 'register_my_menus' );
 add_filter('widget_text', 'do_shortcode');
