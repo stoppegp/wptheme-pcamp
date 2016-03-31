@@ -36,6 +36,38 @@ if ( !has_post_thumbnail() ) {
 <?php } ?>
 </div>
 			<div class="cright">
+
+			<?php
+			 if (get_post_meta (get_the_ID(), '_pcamp_steckbrief', true ) === "true") {
+			 ?>
+
+			<aside class="widget">
+            <div id="steckbrief">
+                <?php
+                if (get_the_author_meta('user_url', get_the_author_id())<>'') {
+                    echo '<a href="'.get_the_author_meta('user_url', get_the_author_id()).'" class="steckbrief-link">';
+                }
+                ?>
+			<?php echo get_avatar( get_the_author_id(), 512 ); ?> 
+            <span class="text">
+            	<strong><?php the_author(); ?></strong>
+            	<?php
+                if (get_the_author_meta('description', get_the_author_id())<>'') {
+                    echo '<br>'.get_the_author_meta('description', get_the_author_id());
+                }
+                ?>
+            </span>
+                <?php
+                if (get_the_author_meta('user_url', get_the_author_id())<>'') {
+                    echo '</a>';
+                }
+                ?>
+            </div>
+            </aside>
+			<?php
+			}
+			?>
+			
        <?php
 		$custom_fields = get_post_custom();
         if (  
