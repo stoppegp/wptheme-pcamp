@@ -15,7 +15,7 @@ function pcamp_top_caption_add_meta_box() {
 
 	  add_meta_box(
 		'pcamp_top_caption_sectionid',      // Unique ID
-		esc_html__( 'Auf Startseite anzeigen', 'example' ),    // Title
+		esc_html__( 'Top-Meldung', 'example' ),    // Title
 		'pcamp_top_caption_meta_box_callback',   // Callback function
 		'post',         // Admin page (or post type)
 		'side',         // Context
@@ -40,7 +40,7 @@ function pcamp_top_caption_meta_box_callback( $post ) {
 	$value = get_post_meta( $post->ID, '_pcamp_top', true );
 	if ($value === "false") $vtext = "checked=\"checked\""; else $vtext = "";
 	echo '<input id="pcamp_top" name="pcamp_top" value="false" type="checkbox" '.$vtext.'><label for="pcamp_top">';
-	_e( 'Auf Startseite verbergen', 'pcamp_top_caption_textdomain' );
+	_e( 'Keine Top-Meldung', 'pcamp_top_caption_textdomain' );
 	echo '</label> ';
 }
 
