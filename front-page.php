@@ -83,6 +83,7 @@ if (($b3_text != "") && ($b4_text != "") && ($b3_image != "") && ($b4_image != "
 	echo $ret;
 	$posttopid = $postid;
 	?>
+	<p style="text-align:right;clear:both;"><a href="<?php  echo get_permalink( get_option('page_for_posts' ) ); ?>">weitere Meldungen</a></p>
 </div>
 
 <div class="fp-posts">
