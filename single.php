@@ -61,7 +61,7 @@ if ( !has_post_thumbnail() ) {
                 }
                 if (isset($custom_fields['image_url']) &&  $custom_fields['image_url'][0]<>'') {
                     echo wp_get_attachment_image( $custom_fields['image_url'][0], array(300,300) ); 
-				 echo ($incmicrodata) ? '<meta itemprop="image" content="'.$custom_fields['image_url'][0].'"' : ''; 
+				 echo ($incmicrodata) ? '<meta itemprop="image" content="'.$custom_fields['image_url'][0].'">' : ''; 
                 } ?>
                 <span class="text" <?php echo ($incmicrodata) ? 'itemprop="name"' : ''; ?>>
                      <?php echo nl2br(do_shortcode(get_post_meta($post->ID, 'text', $single = true))); ?>
