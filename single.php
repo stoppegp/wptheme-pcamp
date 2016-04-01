@@ -1,12 +1,16 @@
+<?php
+if (get_theme_mod( 'pcamp_md_enable', false )) $incmicrodata = true;
+?>
 <?php get_header(); ?>
-
+<div <?php echo ($incmicrodata) ? 'itemscope itemtype="http://schema.org/NewsArticle"' : ''; ?>>
 
 	<div class="cbanner longtitle <?php echo (has_post_thumbnail())?"":"titleonly"; ?> ">
-		<span class="banner-caption"><?php the_title(); ?></span>
+		<span class="banner-caption" <?php echo ($incmicrodata) ? 'itemprop="headline"' : ''; ?>><?php the_title(); ?></span>
 		<?php 
 		if ( has_post_thumbnail() ) { 
 		  ?>		
-		<div class="post-image"><?php the_post_thumbnail(); ?></div>
+		<div class="post-image" <?php echo ($incmicrodata) ? 'itemprop="image" itemscope itemtype="http://schema.org/ImageObject"' : ''; ?>><?php the_post_thumbnail(); ?>
+		<?php if ($incmicrodata) { echo '<meta itemprop="url" content="'; the_post_thumbnail_url(); echo '">'; } ?></div>
 		<?php } ?>
 	</div>
 		
@@ -42,7 +46,7 @@ if ( !has_post_thumbnail() ) {
 			 ?>
 
 			<aside class="widget">
-            <div id="steckbrief">
+            <div id="steckbrief" <?php echo ($incmicrodata) ? 'itemprop="author" itemscope itemtype="https://schema.org/Person"' : ''; ?>>
                 <?php
                 if (get_the_author_meta('user_url', get_the_author_id())<>'') {
                     echo '<a href="'.get_the_author_meta('user_url', get_the_author_id()).'" class="steckbrief-link">';
@@ -50,7 +54,7 @@ if ( !has_post_thumbnail() ) {
                 ?>
 			<?php echo get_avatar( get_the_author_id(), 512 ); ?> 
             <span class="text">
-            	<strong><?php the_author(); ?></strong>
+            	<strong><span <?php echo ($incmicrodata) ? 'itemprop="name"' : ''; ?>><?php the_author(); ?></span></strong>
             	<?php
                 if (get_the_author_meta('description', get_the_author_id())<>'') {
                     echo '<br>'.get_the_author_meta('description', get_the_author_id());
@@ -75,20 +79,17 @@ if ( !has_post_thumbnail() ) {
 		   ($custom_fields['image_url'][0]<>'') && ($custom_fields['text'][0]<>'')))             
             {   ?>
 			<aside class="widget">
-            <div id="steckbrief">
+            <div id="steckbrief" <?php echo ($incmicrodata) ? 'itemprop="author" itemscope itemtype="https://schema.org/Person"' : ''; ?>>
                 
                 <?php
                 if ($custom_fields['link'][0]<>'') {
                     echo '<a href="'.$custom_fields['link'][0].'" class="steckbrief-link">';
                 }
-                if ($custom_fields['title'][0]<>'') {
-                    echo '<span class="widget-title">'.$custom_fields['title'][0]."</span>";
-                }
                 if (isset($custom_fields['image_url']) &&  $custom_fields['image_url'][0]<>'') {
                     echo wp_get_attachment_image( $custom_fields['image_url'][0], array(300,300) ); 
+				 echo ($incmicrodata) ? '<meta itemprop="image" content="'.$custom_fields['image_url'][0].'"' : ''; 
                 } ?>
-                
-                <span class="text">
+                <span class="text" <?php echo ($incmicrodata) ? 'itemprop="name"' : ''; ?>>
                      <?php echo nl2br(do_shortcode(get_post_meta($post->ID, 'text', $single = true))); ?>
                 </span>
                 <?php
@@ -114,4 +115,14 @@ if ( !has_post_thumbnail() ) {
 			</div>
 </div>
 </div>
+<?php if ($incmicrodata) { ?>
+ <meta itemprop="datePublished" content="<?php echo get_the_date("c"); ?>">
+   <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="<?php echo get_theme_mod( 'pcamp_md_logo', '' ); ?>">
+    </div>
+    <meta itemprop="name" content="<?php echo get_theme_mod( 'pcamp_md_publisher', '' ); ?>">
+  </div>
+</div>
+<?php } ?>
 <?php get_footer(); ?>

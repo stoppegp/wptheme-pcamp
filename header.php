@@ -58,11 +58,3 @@
 		</nav>
 		
 	<div id="wrapper">
-
-
-
-
-
-
-
-

@@ -1,3 +1,6 @@
+<?php
+if (get_theme_mod( 'pcamp_md_enable', false )) $incmicrodata = true;
+?>
 <?php get_header(); ?>
 	<div class="cbanner">
 	<span class="banner-caption">Aktuelles</span>
@@ -19,12 +22,27 @@
 	 
 				<?php // The Loop ?>
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-					<div class="part">
+					<div class="part" <?php echo ($incmicrodata) ? 'itemscope itemtype="http://schema.org/NewsArticle"' : ''; ?>>
 						<span class="post-date"><?php the_date(); ?> </span>
-						<h2 class="post-title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+						<h2 class="post-title"><a href="<?php the_permalink() ?>"><span <?php echo ($incmicrodata) ? 'itemprop="headline"' : ''; ?>><?php the_title(); ?></span></a></h2>
 						<div class="entry">
 							<?php the_content("Weiterlesen... " . the_title('', '', false)); ?>
 						</div>
+						<?php if ($incmicrodata) { ?>
+							  <meta itemprop="url" content="<?php the_permalink(); ?>">
+						 <meta itemprop="datePublished" content="<?php echo get_the_date("c"); ?>">
+						   <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+							<div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+							  <meta itemprop="url" content="<?php echo get_theme_mod( 'pcamp_md_logo', '' ); ?>">
+							</div>
+							<meta itemprop="name" content="<?php echo get_theme_mod( 'pcamp_md_publisher', '' ); ?>">
+						  </div>
+						<?php 
+						if ( has_post_thumbnail() ) { 
+						  ?>		
+						<div class="post-image" <?php echo ($incmicrodata) ? 'itemprop="image" itemscope itemtype="http://schema.org/ImageObject"' : ''; ?>><?php if ($incmicrodata) { echo '<meta itemprop="url" content="'; the_post_thumbnail_url(); echo '">'; } ?></div>
+						<?php } ?>
+						<?php } ?>
 					</div>
 				<?php endwhile; ?>
 				<?php get_template_part("pagelinks"); ?>

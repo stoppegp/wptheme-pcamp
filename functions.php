@@ -123,6 +123,18 @@ function pcamp_customize_register( $wp_customize ) {
 	    'default'     => '',
 	    'transport'   => 'refresh',
 	) );
+	$wp_customize->add_setting( 'pcamp_md_enable' , array(
+	    'default'     => '',
+	    'transport'   => 'refresh',
+	) );
+	$wp_customize->add_setting( 'pcamp_md_publisher' , array(
+	    'default'     => '',
+	    'transport'   => 'refresh',
+	) );
+	$wp_customize->add_setting( 'pcamp_md_logo' , array(
+	    'default'     => '',
+	    'transport'   => 'refresh',
+	) );
 $wp_customize->add_section( 'pcamp_pagetitlegroup' , array(
     'title'      => __( 'Seitenkopf', 'pcamp' ),
     'priority'   => 30,
@@ -144,6 +156,30 @@ $wp_customize->add_control(        new WP_Customize_Image_Control(
                'label'      => __( 'Headerbild hochladen', 'pcamp' ),
                'section'    => 'pcamp_pagetitlegroup',
                'settings'   => 'pcamp_kandidatenimg',
+           )
+       ) );
+$wp_customize->add_section( 'pcamp_md' , array(
+    'title'      => __( 'Microdata', 'pcamp' ),
+    'priority'   => 30,
+) );
+$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'pcamp_md_enable', array(
+	'label'        => __( 'Microdata aktivieren', 'pcamp' ),
+	'section'    => 'pcamp_md',
+	'settings'   => 'pcamp_md_enable',
+    'type'      => 'checkbox'
+) ) );
+$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'pcamp_md_publisher', array(
+	'label'        => __( 'Publisher', 'pcamp' ),
+	'section'    => 'pcamp_md',
+	'settings'   => 'pcamp_md_publisher',
+) ) );
+$wp_customize->add_control(        new WP_Customize_Image_Control(
+           $wp_customize,
+           'pcamp_md_logo',
+           array(
+               'label'      => __( 'Logo hochladen', 'pcamp' ),
+               'section'    => 'pcamp_md',
+               'settings'   => 'pcamp_md_logo'
            )
        ) );
 }
