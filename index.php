@@ -6,7 +6,15 @@ if (get_theme_mod( 'pcamp_md_enable', false )) $incmicrodata = true;
 	<span class="banner-caption">Aktuelles</span>
 		<div class="post-image">
 
-		<img src="<?php bloginfo('template_url'); ?>/res/images/defaultbild-presse.jpg" id="headerlogo"/></div>
+		<?php
+			if (get_theme_mod( 'pcamp_def_news', false )) {
+				$himg = get_attachment_by_url(get_theme_mod( 'pcamp_def_news', false ), "banner")[0];
+			} else {
+				$himg = get_bloginfo('template_url')."/res/images/defaultbild-presse.jpg";
+			}
+		?>
+
+		<img src="<?php echo $himg; ?>" id="headerlogo"/></div>
 </div>
 		<div class="content">
 

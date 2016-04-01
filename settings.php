@@ -1,7 +1,7 @@
 <?php
 
 function pcamp_customize_register( $wp_customize ) {
-	$sections = array("pagetitlegroup" => "Seitenkopf", "fp" => "Startseite", "md" => "Microdata");
+	$sections = array("pagetitlegroup" => "Seitenkopf", "fp" => "Startseite", "md" => "Microdata", "def" => "Standardeinstellungen");
 
 	$options = array(
 		"pagetitle"	=> array(
@@ -128,6 +128,12 @@ function pcamp_customize_register( $wp_customize ) {
 		"fp_4image"		=> array(
 			"name"		=>	"Button 4 - Bild",
 			"section"	=>	"fp",
+			"type"		=>	"image",
+			"default"	=>	""
+		),
+		"def_news"		=> array(
+			"name"		=>	"Seitenkopf News",
+			"section"	=>	"def",
 			"type"		=>	"image",
 			"default"	=>	""
 		),
