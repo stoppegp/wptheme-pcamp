@@ -3,7 +3,7 @@
 
 	<div class="cbanner">
 		<div class="post-image">
-		<img src="<?php echo $group['image']; ?>" id="headerlogo"/></div>
+		<img src="<?php echo get_attachment_by_url($group['image'], "banner")[0]; ?>" id="headerlogo"/></div>
 		<span class="banner-caption"><?php echo $group['name']; ?></span>
 	</div>
 

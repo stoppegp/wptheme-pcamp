@@ -3,7 +3,7 @@
 if ( has_post_thumbnail() ) { 
   ?>
 	<div class="cbanner">
-		<div class="post-image"><?php the_post_thumbnail(); ?></div>
+		<div class="post-image"><?php the_post_thumbnail("banner"); ?></div>
 
 				<span class="banner-caption"><?php the_title(); ?></span>
 	</div>

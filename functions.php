@@ -64,6 +64,7 @@ add_filter('widget_text', 'do_shortcode');
 add_theme_support('post-thumbnails');
 add_image_size( 'fp-button', 502, 150, true);
 add_image_size( 'fp-bigbutton', 1024, 306, true);
+add_image_size( 'banner', 1024, 200, true);
 $args = array(
 	'search-form',
 	'comment-form',

@@ -9,7 +9,7 @@ if (get_theme_mod( 'pcamp_md_enable', false )) $incmicrodata = true;
 		<?php 
 		if ( has_post_thumbnail() ) { 
 		  ?>		
-		<div class="post-image" <?php echo ($incmicrodata) ? 'itemprop="image" itemscope itemtype="http://schema.org/ImageObject"' : ''; ?>><?php the_post_thumbnail(); ?>
+		<div class="post-image" <?php echo ($incmicrodata) ? 'itemprop="image" itemscope itemtype="http://schema.org/ImageObject"' : ''; ?>><?php the_post_thumbnail("banner"); ?>
 		<?php if ($incmicrodata) { echo '<meta itemprop="url" content="'; the_post_thumbnail_url(); echo '">'; } ?></div>
 		<?php } ?>
 	</div>
