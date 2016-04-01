@@ -61,7 +61,7 @@ if ( !has_post_thumbnail() ) {
                 }
                 if (isset($custom_fields['image_url']) &&  $custom_fields['image_url'][0]<>'') {
                     echo wp_get_attachment_image( $custom_fields['image_url'][0], array(300,300) ); 
-				 echo ($incmicrodata) ? '<meta itemprop="image" content="'.$custom_fields['image_url'][0].'">' : ''; 
+				 echo ($incmicrodata) ? '<meta itemprop="image" content="'.wp_get_attachment_image_src( $custom_fields['image_url'][0], array(300,300))[0].'">' : ''; 
                 } ?>
                 <span class="text" <?php echo ($incmicrodata) ? 'itemprop="name"' : ''; ?>>
                      <?php echo nl2br(do_shortcode(get_post_meta($post->ID, 'text', $single = true))); ?>
@@ -90,7 +90,9 @@ if ( !has_post_thumbnail() ) {
 </div>
 </div>
 <?php if ($incmicrodata) { ?>
- <meta itemprop="datePublished" content="<?php echo get_the_date("c"); ?>">
+  <meta itemprop="datePublished" content="<?php echo get_the_date("c"); ?>">
+  <meta itemprop="dateModified" content="<?php echo get_the_modified_date("c"); ?>">
+  <link itemprop="mainEntityOfPage" href="<?php the_permalink(); ?>" />
    <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
     <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
       <meta itemprop="url" content="<?php echo get_theme_mod( 'pcamp_md_logo', '' ); ?>">
