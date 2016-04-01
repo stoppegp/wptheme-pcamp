@@ -10,7 +10,11 @@ if (get_theme_mod( 'pcamp_md_enable', false )) $incmicrodata = true;
 		if ( has_post_thumbnail() ) { 
 		  ?>		
 		<div class="post-image" <?php echo ($incmicrodata) ? 'itemprop="image" itemscope itemtype="http://schema.org/ImageObject"' : ''; ?>><?php the_post_thumbnail("banner"); ?>
-		<?php if ($incmicrodata) { echo '<meta itemprop="url" content="'; the_post_thumbnail_url(); echo '">'; } ?></div>
+		<?php if ($incmicrodata) {
+			echo '<meta itemprop="url" content="'; the_post_thumbnail_url(); echo '">';
+			echo '<meta itemprop="width" content="'; echo wp_get_attachment_image_src(get_post_thumbnail_id(), null)[1]; echo '">';  
+			echo '<meta itemprop="height" content="'; echo wp_get_attachment_image_src(get_post_thumbnail_id(), null)[2]; echo '">'; 
+		} ?></div>
 		<?php } ?>
 	</div>
 		
@@ -90,6 +94,10 @@ if ( !has_post_thumbnail() ) {
    <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
     <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
       <meta itemprop="url" content="<?php echo get_theme_mod( 'pcamp_md_logo', '' ); ?>">
+      <?php
+			echo '<meta itemprop="width" content="'; echo get_attachment_by_url(get_theme_mod( 'pcamp_md_logo', '' ), null)[1]; echo '">';  
+			echo '<meta itemprop="height" content="'; echo get_attachment_by_url(get_theme_mod( 'pcamp_md_logo', '' ), null)[2]; echo '">'; 
+      ?>
     </div>
     <meta itemprop="name" content="<?php echo get_theme_mod( 'pcamp_md_publisher', '' ); ?>">
   </div>
