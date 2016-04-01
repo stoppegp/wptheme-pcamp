@@ -508,6 +508,51 @@ aside.widget {
 	font-size: 90%;
 }
 
+/* Front Page */
+.fp .part {
+	margin-bottom: 20px;
+}
+.fp-posts {
+	overflow:auto;
+		margin-bottom: 20px;
+}
+.fp-posts > div {
+	width: 33.33%;
+	float: left;
+	height: 400px;
+	overflow: hidden;
+	padding-left: 6.7px;
+	padding-right: 6.7px;
+	position: relative;
+}
+.fp-posts > div > div {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+.fp-posts > div:first-child {
+	padding-right: 13.3px;
+	padding-left: 0px;
+}
+.fp-posts > div:last-child {
+	padding-left: 13.3px;
+	padding-right: 0px;
+}
+.fp-posts .readmore {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	width: 100%;
+	padding: 20px;
+	padding-top: 120px;
+	background-image: linear-gradient(to bottom, transparent 0%, white 75%);
+	font-weight: bold;
+}
+.more-link {
+	font-weight: bold;
+}	
 /* Steckbrief */
 a.steckbrief-link {
 	color: black;
@@ -1022,6 +1067,17 @@ display: none;
 	margin-top: 0 !important;
 		margin-bottom: -5px;
 	position: relative;
+}
+/* Frontpage */
+.fp-posts > div {
+	float: none;
+	width: 100%;
+	margin-bottom: 20px;
+	padding: 0 !important;
+	height: 300px;
+}
+.fp-posts {
+	margin-bottom: 0;
 }
 }
 

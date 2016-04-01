@@ -184,7 +184,10 @@ $wp_customize->add_control(        new WP_Customize_Image_Control(
        ) );
 }
 add_action( 'customize_register', 'pcamp_customize_register' );
-
+add_filter( 'the_content_more_link', 'modify_read_more_link' );
+function modify_read_more_link() {
+return '<a class="more-link" href="' . get_permalink() . '">weiterlesen...</a>';
+}
 class pcamp_Nav_Menu extends Walker_Nav_Menu {
 	/**
 	 * @see Walker::start_el()
