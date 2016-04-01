@@ -1,7 +1,6 @@
 <?php
 include('groups/pcamp-groups.php');
 include('addtopbox.php');
-include('addauthorbox.php');
 include('settings.php');
 
 function pcamp_widgets_init() {

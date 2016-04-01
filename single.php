@@ -41,37 +41,7 @@ if ( !has_post_thumbnail() ) {
 </div>
 			<div class="cright">
 
-			<?php
-			 if (get_post_meta (get_the_ID(), '_pcamp_steckbrief', true ) === "true") {
-			 ?>
-
-			<aside class="widget">
-            <div id="steckbrief" <?php echo ($incmicrodata) ? 'itemprop="author" itemscope itemtype="https://schema.org/Person"' : ''; ?>>
-                <?php
-                if (get_the_author_meta('user_url', get_the_author_id())<>'') {
-                    echo '<a href="'.get_the_author_meta('user_url', get_the_author_id()).'" class="steckbrief-link">';
-                }
-                ?>
-			<?php echo get_avatar( get_the_author_id(), 512 ); ?> 
-            <span class="text">
-            	<strong><span <?php echo ($incmicrodata) ? 'itemprop="name"' : ''; ?>><?php the_author(); ?></span></strong>
-            	<?php
-                if (get_the_author_meta('description', get_the_author_id())<>'') {
-                    echo '<br>'.get_the_author_meta('description', get_the_author_id());
-                }
-                ?>
-            </span>
-                <?php
-                if (get_the_author_meta('user_url', get_the_author_id())<>'') {
-                    echo '</a>';
-                }
-                ?>
-            </div>
-            </aside>
-			<?php
-			} else {
-			?>
-			
+		
        <?php
 		$custom_fields = get_post_custom();
         if (  
@@ -100,7 +70,7 @@ if ( !has_post_thumbnail() ) {
            </div>
            </aside>
            <?php 
-        } }  ?>
+        }   ?>
 			<?php get_sidebar('pcamp'); ?>		
 			<aside class="widget">
 						Veröffentlicht am <?=get_the_time('j. F Y');?> um <?=get_the_time('H:i');?> Uhr<?php
