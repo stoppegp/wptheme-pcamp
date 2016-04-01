@@ -2,6 +2,7 @@
 include('groups/pcamp-groups.php');
 include('addtopbox.php');
 include('addauthorbox.php');
+include('settings.php');
 
 function pcamp_widgets_init() {
 	register_sidebar( array(
@@ -30,6 +31,11 @@ function pcamp_widgets_init() {
 	) );
 }
 
+function get_attachment_by_url($url, $size) {
+	global $wpdb;
+	$attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $url )); 
+    return wp_get_attachment_image_src($attachment[0], $size);
+}
 
 
 function register_my_menus() {
@@ -57,6 +63,8 @@ add_action( 'widgets_init', 'pcamp_widgets_init' );
 add_action( 'init', 'register_my_menus' );
 add_filter('widget_text', 'do_shortcode');
 add_theme_support('post-thumbnails');
+add_image_size( 'fp-button', 502, 150, true);
+add_image_size( 'fp-bigbutton', 1024, 306, true);
 $args = array(
 	'search-form',
 	'comment-form',
@@ -67,80 +75,6 @@ $args = array(
 add_theme_support( 'html5', $args );
 
 
-function pcamp_customize_register( $wp_customize ) {
-	$wp_customize->add_setting( 'pcamp_pagetitle' , array(
-	    'default'     => 'Piratenpartei',
-	    'transport'   => 'refresh',
-	) );
-	$wp_customize->add_setting( 'pcamp_pagesubtitle' , array(
-	    'default'     => 'Baden-Württemberg',
-	    'transport'   => 'refresh',
-	) );
-	$wp_customize->add_setting( 'pcamp_kandidatenimg' , array(
-	    'default'     => '',
-	    'transport'   => 'refresh',
-	) );
-	$wp_customize->add_setting( 'pcamp_md_enable' , array(
-	    'default'     => '',
-	    'transport'   => 'refresh',
-	) );
-	$wp_customize->add_setting( 'pcamp_md_publisher' , array(
-	    'default'     => '',
-	    'transport'   => 'refresh',
-	) );
-	$wp_customize->add_setting( 'pcamp_md_logo' , array(
-	    'default'     => '',
-	    'transport'   => 'refresh',
-	) );
-$wp_customize->add_section( 'pcamp_pagetitlegroup' , array(
-    'title'      => __( 'Seitenkopf', 'pcamp' ),
-    'priority'   => 30,
-) );
-$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'pcamp_pagetitle', array(
-	'label'        => __( 'Seitentitel', 'mytheme' ),
-	'section'    => 'pcamp_pagetitlegroup',
-	'settings'   => 'pcamp_pagetitle',
-) ) );
-$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'pcamp_pagesubtitle', array(
-	'label'        => __( 'Seitenuntertitel', 'mytheme' ),
-	'section'    => 'pcamp_pagetitlegroup',
-	'settings'   => 'pcamp_pagesubtitle',
-) ) );
-$wp_customize->add_control(        new WP_Customize_Image_Control(
-           $wp_customize,
-           'kandidatenimg',
-           array(
-               'label'      => __( 'Headerbild hochladen', 'pcamp' ),
-               'section'    => 'pcamp_pagetitlegroup',
-               'settings'   => 'pcamp_kandidatenimg',
-           )
-       ) );
-$wp_customize->add_section( 'pcamp_md' , array(
-    'title'      => __( 'Microdata', 'pcamp' ),
-    'priority'   => 30,
-) );
-$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'pcamp_md_enable', array(
-	'label'        => __( 'Microdata aktivieren', 'pcamp' ),
-	'section'    => 'pcamp_md',
-	'settings'   => 'pcamp_md_enable',
-    'type'      => 'checkbox'
-) ) );
-$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'pcamp_md_publisher', array(
-	'label'        => __( 'Publisher', 'pcamp' ),
-	'section'    => 'pcamp_md',
-	'settings'   => 'pcamp_md_publisher',
-) ) );
-$wp_customize->add_control(        new WP_Customize_Image_Control(
-           $wp_customize,
-           'pcamp_md_logo',
-           array(
-               'label'      => __( 'Logo hochladen', 'pcamp' ),
-               'section'    => 'pcamp_md',
-               'settings'   => 'pcamp_md_logo'
-           )
-       ) );
-}
-add_action( 'customize_register', 'pcamp_customize_register' );
 add_filter( 'the_content_more_link', 'modify_read_more_link' );
 function modify_read_more_link() {
 return '<a class="more-link" href="' . get_permalink() . '">weiterlesen...</a>';
