@@ -47,7 +47,7 @@ function register_my_menus() {
 }
 function pcamp_sidebar( $atts, $content="" ) {
 	global $PCAMP_SIDEBAR;
-	if ($atts['title']) $array['title'] = $atts['title'];
+	if (isset($atts['title'])) $array['title'] = $atts['title'];
 	$array['content'] = $content;
 	 $PCAMP_SIDEBAR[] = $array;
 	 return "";

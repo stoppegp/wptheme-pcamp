@@ -104,6 +104,7 @@ if (($b3_text != "") && ($b4_text != "") && ($b3_image != "") && ($b4_image != "
 
 <?php endwhile; // end of the loop. ?>
 
+<?php get_sidebar('pcampfront'); ?>
 
 </div>
 
