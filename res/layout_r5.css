@@ -539,6 +539,7 @@ aside.widget {
 	padding-right: 0px;
 }
 .fp-posts .readmore {
+	display: block;
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -548,6 +549,10 @@ aside.widget {
 	padding-top: 120px;
 	background-image: linear-gradient(to bottom, transparent 0%, white 75%);
 	font-weight: bold;
+}
+.fp-posts .readmore:hover {
+	opacity: 1 !important;
+	color: rgba(255,130,0,.8);
 }
 
 

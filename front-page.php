@@ -94,7 +94,7 @@ if (($b3_text != "") && ($b4_text != "") && ($b3_image != "") && ($b4_image != "
 		$postid = $recent_post[$c]['ID'];
 		setup_postdata( $GLOBALS['post'] =& get_post($postid) );
 		?>
-<div><div class="part"><span class="post-date">Meldung vom <?php echo get_the_date(); ?></span><h2 class="post-title"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2><?php the_content(); ?><div class="readmore"><a href="<?php the_permalink();?>">weiterlesen...</a></div></div></div>
+<div><div class="part"><span class="post-date">Meldung vom <?php echo get_the_date(); ?></span><h2 class="post-title"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2><?php the_content(); ?><a class="readmore" href="<?php the_permalink();?>">weiterlesen...</a></div></div>
 		<?php
 	}
 	?>
