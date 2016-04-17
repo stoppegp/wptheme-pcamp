@@ -31,9 +31,11 @@
 <![endif]-->
 <script>
 $(document).ready(function() {
-	$("#mainnav a").focus(function() {
+	$("a, input").focus(function() {
 		$("#mainnav li").removeClass("hover");
-		$(this).parentsUntil("#mainnav > div > ul", "li").addClass("hover");
+		if ($(this).is("#mainnav a")) {
+			$(this).parentsUntil("#mainnav > div > ul", "li").addClass("hover");
+		}
 	});	
 
 });
