@@ -88,19 +88,25 @@ if (($b3_text != "") && ($b4_text != "") && ($b3_image != "") && ($b4_image != "
 
 <div class="fp-posts">
 
+
 <?php
 	$recent_post = wp_get_recent_posts( array('numberposts' => 3, 'post_type' => 'post', 'post_status' => 'publish', 'post__not_in' => array($posttopid)));
 	for ($c = 0; $c < 3; $c++) {
 		$postid = $recent_post[$c]['ID'];
 		setup_postdata( $GLOBALS['post'] =& get_post($postid) );
 		?>
-<div><div class="part"><span class="post-date">Meldung vom <?php echo get_the_date(); ?></span><h2 class="post-title"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2><?php the_content(); ?><a class="readmore" href="<?php the_permalink();?>">weiterlesen...</a></div></div>
+<div><div class="part notab"><span class="post-date">Meldung vom <?php echo get_the_date(); ?></span><h2 class="post-title"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2><?php the_content(); ?><a class="readmore" href="<?php the_permalink();?>">weiterlesen...</a></div></div>
 		<?php
 	}
 	?>
 
 
 </div>
+<script>
+$(document).ready(function () {
+    $('.notab p a').attr('tabindex', '-1');
+});
+</script>
 
 <?php endwhile; // end of the loop. ?>
 

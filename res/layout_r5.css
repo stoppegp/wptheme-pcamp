@@ -150,15 +150,17 @@ a {
 	text-decoration: none;
 	font-family: 'Roboto', sans-serif;
 }
-a:hover, a:focus {
+a:hover, a:focus, a:active {
 	opacity: .8;
 	text-decoration: none;
 }
-a:hover img, a:focus img {
+
+a:hover img, a:focus img, a:active img {
 	opacity: .8;
 }
 a:focus {
 	text-decoration: underline;
+	outline: none;
 }
 
 h1 {
@@ -550,7 +552,7 @@ aside.widget {
 	background-image: linear-gradient(to bottom, transparent 0%, white 75%);
 	font-weight: bold;
 }
-.fp-posts .readmore:hover {
+.fp-posts .readmore:hover, .fp-posts .readmore:active, .fp-posts .readmore:focus  {
 	opacity: 1 !important;
 	color: rgba(255,130,0,.8);
 }
