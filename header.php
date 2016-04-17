@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title><?php wp_title( '»', true, "right" ); ?> <?php bloginfo('name'); ?></title>
+	<title><?php wp_title( '»', true, "right" ); ?><?php bloginfo('name'); ?></title>
 	<link rel="stylesheet" href="<?php echo get_theme_dir(); ?>/res/layout_r5.css" type="text/css" media="all" />
-    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	<link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('template_url'); ?>/res/favicon_r1.ico" />
 	<script src="<?php bloginfo('template_url'); ?>/res/jquery-1.11.1.min.js"></script>
 	<script src="<?php bloginfo('template_url'); ?>/res/doubletaptogo_r1.min.js"></script>
 	<script type="text/javascript">
-
 	$(window).resize(function() {
 		if ( $('#mainnav').css("position") == "fixed") {
 		$( '#mainnav .main-menu-container li:has(ul)' ).doubleTapToGo();
