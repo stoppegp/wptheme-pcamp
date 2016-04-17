@@ -706,7 +706,7 @@ select {
 }
 #mainnav {
 	min-height: 40px;
-	overflow: auto;
+	overflow: visible;
 	width: 100%;
 	background-color: white;
 	position: relative;
@@ -748,8 +748,9 @@ select {
 		font-family: 'PoliticsHead', sans-serif;
 		font-size: 120%;
 }
-#mainnav > div > ul > li:hover > a, #mainnav > div > ul > li > a:focus {
+#mainnav > div > ul > li:hover > a, #mainnav > div > ul > li.hover > a, #mainnav > div > ul > li > a:focus {
 	background-color: #ff8800;
+	opacity: .8;
 	color: white;
 }
 
@@ -760,13 +761,15 @@ select {
 	position: absolute;
 	top: 39px;
 	left: 0px;
-		list-style-type: none;
+	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	background-color: white;
 	z-index: 100;
+	min-width: 100%;
+box-shadow: 1px 2px 2px 2px rgba(0,0,0,0.29);
 }
-#mainnav > div > ul > li:hover > div.lvl > ul, #mainnav > div > ul > li > a:focus ~  div.lvl > ul {
+#mainnav > div > ul > li:hover > div.lvl > ul, #mainnav > div > ul > li.hover > div.lvl > ul, #mainnav > div > ul > li > a:focus ~  div.lvl > ul {
 	display: block;
 
 }
@@ -789,17 +792,23 @@ select {
 #mainnav > div > ul > li > div.lvl > ul li > a {
 	color: black;
 	display: inline-block;
-	height: 40px;
-	line-height: 30px;
+	height: 30px;
+	line-height: 20px;
 	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
 	width: 100%;
 	white-space:nowrap;
 }
-#mainnav > div > ul > li > div.lvl > ul li:hover > a, #mainnav > div > ul > li > div.lvl > ul li.current-menu-item > a, #mainnav > div > ul > li > div.lvl > ul li.current-menu-ancestor > a {
+#mainnav > div > ul > li > div.lvl > ul li:hover > a, #mainnav > div > ul > li > div.lvl > ul li.hover > a{
 	color: white;
 	background-color: #ff8800;
+	opacity: .8;
 }
-
+ #mainnav > div > ul li.current-menu-item > a, #mainnav > div > ul li.current-menu-ancestor > a, #mainnav > div > ul li.current-menu-item > a, #mainnav > div > ul > li > div.lvl > ul li.current-menu-ancestor > a {
+	color: white !important;
+	background-color: #ff8800 !important;
+}
 
 
 #mainnav > div > ul > li > div.lvl ul > li > div.lvl > ul {
@@ -834,18 +843,18 @@ display: none;
 	padding: 0;
 	margin: 0;
 	overflow: visible;
-	position: relative;
-	left: 0;
+	position: absolute;
+	top: 0;
 	right: 0;
 }
-#mainnav > div > ul > li > div.lvl ul > li:hover > div.lvl > ul {
+#mainnav > div > ul > li > div.lvl ul > li:hover > div.lvl > ul, #mainnav > div > ul > li > div.lvl ul > li.hover > div.lvl > ul {
 	display: block;
 }
 #mainnav > div > ul > li > div.lvl ul > li > div.lvl > ul {
 	
 	position: absolute;
-	left: -5px;
-	top: -25px;
+	left: 0px;
+	top: 0px;
 	text-align: left;
 }	
 
@@ -929,6 +938,10 @@ textarea#comment {
 	padding-right: 0;
 	height: auto;
 }
+#mainnav li:hover > a {
+	background-color: white;
+	color: black;
+}
 #cbmenu:checked ~ div > ul {
 	max-height: 1000px;
 }
@@ -982,7 +995,7 @@ textarea#comment {
 	background-color: white;
 		color: black;
 }
-#mainnav > div > ul > li:hover > a, #mainnav > div > ul > li.current-menu-item > a{
+#mainnav > div > ul > li:hover > a, #mainnav > div > ul > li.hover > a, #mainnav > div > ul > li.current-menu-item > a{
 	background-color: white;
 	color: black;
 }
@@ -1042,7 +1055,7 @@ textarea#comment {
 	color: black;
 	background-color: white;
 }
-#mainnav > div > ul > li > div.lvl > ul li:hover > a, #mainnav > div > ul > li > div.lvl > ul li.current-menu-item > a {
+#mainnav > div > ul > li > div.lvl > ul li > a:hover, #mainnav > div > ul > li > div.lvl > ul li.current-menu-item > a {
 	color: white;
 	background-color: #ff8800;
 }
@@ -1072,6 +1085,9 @@ textarea#comment {
 	left: 0;
 	margin-left: 20px;
 }	
+#mainnav > div > ul > li > div.lvl ul > li.menu-item-has-children > div.lvl {
+	position: relative;
+}
 #mainnav > form.search-form {
 	height: 40px;
 }

@@ -29,6 +29,15 @@
       document.createElement('footer');
    </script>
 <![endif]-->
+<script>
+$(document).ready(function() {
+	$("#mainnav a").focus(function() {
+		$("#mainnav li").removeClass("hover");
+		$(this).parentsUntil("#mainnav > div > ul", "li").addClass("hover");
+	});	
+
+});
+</script>
     <?php wp_head(); ?>
 </head>
 <body>
