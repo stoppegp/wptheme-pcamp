@@ -56,7 +56,9 @@ function pcamp_customize_register( $wp_customize ) {
 		"fp_0image"		=> array(
 			"name"		=>	"Aktionsbutton - Bild",
 			"section"	=>	"fp",
-			"type"		=>	"image",
+			"type"		=>	"cropimage",
+			"width"		=>	1024,
+			"height"	=>  306,
 			"default"	=>	""
 		),
 		"fp_1text"		=> array(
@@ -74,7 +76,9 @@ function pcamp_customize_register( $wp_customize ) {
 		"fp_1image"		=> array(
 			"name"		=>	"Button 1 - Bild",
 			"section"	=>	"fp",
-			"type"		=>	"image",
+			"type"		=>	"cropimage",
+			"width"		=>	502,
+			"height"	=>  150,
 			"default"	=>	""
 		),
 		"fp_2text"		=> array(
@@ -92,7 +96,9 @@ function pcamp_customize_register( $wp_customize ) {
 		"fp_2image"		=> array(
 			"name"		=>	"Button 2 - Bild",
 			"section"	=>	"fp",
-			"type"		=>	"image",
+			"type"		=>	"cropimage",
+			"width"		=>	502,
+			"height"	=>  150,
 			"default"	=>	""
 		),
 		"fp_3text"		=> array(
@@ -110,7 +116,9 @@ function pcamp_customize_register( $wp_customize ) {
 		"fp_3image"		=> array(
 			"name"		=>	"Button 3 - Bild",
 			"section"	=>	"fp",
-			"type"		=>	"image",
+			"type"		=>	"cropimage",
+			"width"		=>	502,
+			"height"	=>  150,
 			"default"	=>	""
 		),
 		"fp_4text"		=> array(
@@ -128,7 +136,9 @@ function pcamp_customize_register( $wp_customize ) {
 		"fp_4image"		=> array(
 			"name"		=>	"Button 4 - Bild",
 			"section"	=>	"fp",
-			"type"		=>	"image",
+			"type"		=>	"cropimage",
+			"width"		=>	502,
+			"height"	=>  150,
 			"default"	=>	""
 		),
 		"def_news"		=> array(
@@ -163,12 +173,25 @@ function pcamp_customize_register( $wp_customize ) {
 				) ) );
 				break;
 			case "image":
-				$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,
+				$wp_customize->add_control( new WP_Customize_Media_Control($wp_customize,
 				   'pcamp_'.$slug,
 				   array(
 					   'label'      => __( $opt['name'], 'pcamp' ),
 					   'section'    => 'pcamp_'.$opt['section'],
-					   'settings'   => 'pcamp_'.$slug
+					   'settings'   => 'pcamp_'.$slug,
+					   'mime_type'	=> 'image'
+				   )
+				) );
+				break;
+			case "cropimage":
+				$wp_customize->add_control( new WP_Customize_Cropped_Image_Control($wp_customize,
+				   'pcamp_'.$slug,
+				   array(
+					   'label'      => __( $opt['name'], 'pcamp' ),
+					   'section'    => 'pcamp_'.$opt['section'],
+					   'settings'   => 'pcamp_'.$slug,
+					   'width'		=> $opt['width'],
+					   'height'		=> $opt['height'],
 				   )
 				) );
 				break;

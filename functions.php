@@ -44,13 +44,6 @@ function pcamp_widgets_init() {
 
 
 
-function get_attachment_by_url($url, $size) {
-	global $wpdb;
-	$attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $url )); 
-    return wp_get_attachment_image_src($attachment[0], $size);
-}
-
-
 function register_my_menus() {
 	register_nav_menus(
 		array(
@@ -77,8 +70,6 @@ add_action( 'widgets_init', 'pcamp_widgets_init' );
 add_action( 'init', 'register_my_menus' );
 add_filter('widget_text', 'do_shortcode');
 add_theme_support('post-thumbnails');
-add_image_size( 'fp-button', 502, 150, true);
-add_image_size( 'fp-bigbutton', 1024, 306, true);
 add_image_size( 'banner', 1024, 200, true);
 $args = array(
 	'search-form',

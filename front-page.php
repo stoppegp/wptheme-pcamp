@@ -29,7 +29,7 @@ if (($b0_text != "") && ($b0_url != "") && ($b0_image != "")) {
 	?>
 	
 		<div class="homebutton">
-			<a href="<?php echo $b0_url; ?>" title="<?php echo $b0_text; ?>"><img src="<?php echo get_attachment_by_url($b0_image, "fp-bigbutton")[0]; ?>" alt="<?php echo $b0_text; ?>"><span class="mtext"><?php echo $b0_text; ?></span></a>
+			<a href="<?php echo $b0_url; ?>" title="<?php echo $b0_text; ?>"><img src="<?php echo wp_get_attachment_image_src(absint($b0_image), array(1024, 306))[0]; ?>" alt="<?php echo $b0_text; ?>"><span class="mtext"><?php echo $b0_text; ?></span></a>
 		</div>
 
 	
@@ -39,13 +39,12 @@ if (($b0_text != "") && ($b0_url != "") && ($b0_image != "")) {
 if (($b1_text != "") && ($b2_text != "") && ($b1_image != "") && ($b2_image != "") && ($b1_url != "") && ($b2_url != "")) {
 	?>
 	<div class="homebuttonrow">
-	
 		<div class="homebutton">
-			<a href="<?php echo $b1_url; ?>" title="<?php echo $b1_text; ?>"><img src="<?php echo get_attachment_by_url($b1_image, "fp-button")[0]; ?>" alt="<?php echo $b1_text; ?>"><span class="mtext"><?php echo $b1_text; ?></span></a>
+			<a href="<?php echo $b1_url; ?>" title="<?php echo $b1_text; ?>"><img src="<?php echo wp_get_attachment_image_src(absint($b1_image), array(502, 150))[0]; ?>" alt="<?php echo $b1_text; ?>"><span class="mtext"><?php echo $b1_text; ?></span></a>
 		</div>
 		
 		<div class="homebutton">
-			<a href="<?php echo $b2_url; ?>" title="<?php echo $b2_text; ?>"><img src="<?php echo get_attachment_by_url($b2_image, "fp-button")[0]; ?>" alt="<?php echo $b2_text; ?>"><span class="mtext"><?php echo $b2_text; ?></span></a>
+			<a href="<?php echo $b2_url; ?>" title="<?php echo $b2_text; ?>"><img src="<?php echo wp_get_attachment_image_src(absint($b2_image), array(502, 150))[0]; ?>" alt="<?php echo $b2_text; ?>"><span class="mtext"><?php echo $b2_text; ?></span></a>
 		</div>
 	
 	</div>
@@ -57,11 +56,11 @@ if (($b3_text != "") && ($b4_text != "") && ($b3_image != "") && ($b4_image != "
 	<div class="homebuttonrow">
 	
 		<div class="homebutton">
-			<a href="<?php echo $b3_url; ?>" title="<?php echo $b3_text; ?>"><img src="<?php echo get_attachment_by_url($b3_image, "fp-button")[0]; ?>" alt="<?php echo $b3_text; ?>"><span class="mtext"><?php echo $b3_text; ?></span></a>
+			<a href="<?php echo $b3_url; ?>" title="<?php echo $b3_text; ?>"><img src="<?php echo wp_get_attachment_image_src(absint($b3_image), array(502, 150))[0]; ?>" alt="<?php echo $b3_text; ?>"><span class="mtext"><?php echo $b3_text; ?></span></a>
 		</div>
 		
 		<div class="homebutton">
-			<a href="<?php echo $b4_url; ?>" title="<?php echo $b4_text; ?>"><img src="<?php echo get_attachment_by_url($b4_image, "fp-button")[0]; ?>" alt="<?php echo $b4_text; ?>"><span class="mtext"><?php echo $b4_text; ?></span></a>
+			<a href="<?php echo $b4_url; ?>" title="<?php echo $b4_text; ?>"><img src="<?php echo wp_get_attachment_image_src(absint($b4_image), array(502, 150))[0]; ?>" alt="<?php echo $b4_text; ?>"><span class="mtext"><?php echo $b4_text; ?></span></a>
 		</div>
 	
 	</div>

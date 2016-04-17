@@ -44,9 +44,9 @@ $(document).ready(function() {
 <div id="iecontainer">
 <div id="pagecontainer">
 		<header id="mainheader">
-			<?php $kandidatenimg = get_theme_mod( 'pcamp_kandidatenimg', '' ); 
-			if ($kandidatenimg != "") {?>
-		<img id="headerimage" src="<?php echo get_theme_mod( 'pcamp_kandidatenimg', 'Piratenpartei' ); ?>">
+			<?php $kandidatenimg = absint(get_theme_mod( 'pcamp_kandidatenimg', '' )); 
+			if ($kandidatenimg) {?>
+		<img id="headerimage" src="<?php echo wp_get_attachment_image_src($kandidatenimg, array(500, 500))[0]; ?>">
 <?php } ?>
 			<a class="homelink" href="<?php bloginfo('url'); ?>"><h1><?php echo get_theme_mod( 'pcamp_pagetitle', 'Piratenpartei' ); ?>
 </h1><h2><?php echo get_theme_mod( 'pcamp_pagesubtitle', 'Baden-Württemberg' ); ?></h2></a>

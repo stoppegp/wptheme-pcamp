@@ -97,8 +97,8 @@ if ( !has_post_thumbnail() ) {
     <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
       <meta itemprop="url" content="<?php echo get_theme_mod( 'pcamp_md_logo', '' ); ?>">
       <?php
-			echo '<meta itemprop="width" content="'; echo get_attachment_by_url(get_theme_mod( 'pcamp_md_logo', '' ), null)[1]; echo '">';  
-			echo '<meta itemprop="height" content="'; echo get_attachment_by_url(get_theme_mod( 'pcamp_md_logo', '' ), null)[2]; echo '">'; 
+			echo '<meta itemprop="width" content="'; echo wp_get_attachment_image_src(absint(get_theme_mod( 'pcamp_md_logo', false )), "")[1]; echo '">';  
+			echo '<meta itemprop="height" content="'; echo wp_get_attachment_image_src(absint(get_theme_mod( 'pcamp_md_logo', false )), "")[2]; echo '">'; 
       ?>
     </div>
     <meta itemprop="name" content="<?php echo get_theme_mod( 'pcamp_md_publisher', '' ); ?>">
