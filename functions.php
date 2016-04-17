@@ -1,5 +1,4 @@
 <?php
-include('groups/pcamp-groups.php');
 include('addtopbox.php');
 include('settings.php');
 
@@ -20,15 +19,30 @@ function pcamp_widgets_init() {
 		'before_title' => '<div class="widget-title">',
 		'after_title' => '</div>',
 	) );
-	register_sidebar( array(
-		'name' => __( 'Standard Seiten-Sidebar', 'pcamp' ),
-		'id' => 'sidebar-side2',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<div class="widget-title">',
-		'after_title' => '</div>',
-	) );
+	
+	$args = array(
+		'parent' => 0,
+		'post_type' => 'page'
+	); 
+	$tlpages = get_pages( $args );
+	if (is_array($tlpages) && (count($tlpages) > 0)) {
+		foreach ($tlpages as $tlpage) {
+			$subp = get_pages('child_of='.$tlpage->ID);
+				if (is_array($subp) && (count($subp) > 0)) {
+				register_sidebar( array(
+					'name' => __( 'Seitengruppe: '.$tlpage->post_title, 'pcamp' ),
+					'id' => 'sidebar-pagegroup-'.$tlpage->ID,
+					'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+					'after_widget' => "</aside>",
+					'before_title' => '<div class="widget-title">',
+					'after_title' => '</div>',
+				) );
+			}
+		}
+	}
 }
+
+
 
 function get_attachment_by_url($url, $size) {
 	global $wpdb;
@@ -47,9 +61,10 @@ function register_my_menus() {
 }
 function pcamp_sidebar( $atts, $content="" ) {
 	global $PCAMP_SIDEBAR;
+	global $PCAMP_SIDEBAR_AFTER;
 	if (isset($atts['title'])) $array['title'] = $atts['title'];
 	$array['content'] = $content;
-	 $PCAMP_SIDEBAR[] = $array;
+	if (($atts[0] == "after")) $PCAMP_SIDEBAR_AFTER[] = $array; else $PCAMP_SIDEBAR[] = $array;
 	 return "";
 }
 
