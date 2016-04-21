@@ -920,7 +920,7 @@ textarea#comment {
 	z-index: 9998;
 	display: none;
 	opacity: 0;
-	transition:opacity 0.5s ease-in-out;
+		transition:opacity 0.5s ease-in-out, width 0.1s linear 0.5s;
 }
 input[type=checkbox]#cbmenu {
 	display: none;
@@ -1027,6 +1027,7 @@ input[type=checkbox]#cbmenu {
 #cbmenu:checked ~ #shadowbox {
 	width: 100%;
 	opacity: .7;
+		transition:opacity 0.5s ease-in-out, width 0.1s linear 0s;
 }
 #mainnav form.search-form input.search-field::-moz-placeholder {
 	color: #555;
