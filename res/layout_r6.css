@@ -248,8 +248,8 @@ header#mainheader {
 	top: 0;
 	overflow: hidden;
 	margin-bottom: 20px;
-	background-image: url('images/hpheader.png');
-	background-position: right bottom;
+	background-image: url('images/hpheader_r2.png');
+	background-position: right top;
 	background-repeat: no-repeat;
 }
 header#mainheader a.homelink {
@@ -626,7 +626,7 @@ a.steckbrief-link {
 
 /* Suche */
 
-#mainnav > form.search-form {
+#mainnav form.search-form {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -634,14 +634,14 @@ a.steckbrief-link {
 
 	
 }
-#mainnav > form.search-form span.screen-reader-text {
+#mainnav form.search-form span.screen-reader-text {
 	display: none;
 	
 }
-#mainnav > form.search-form input.search-submit {
+#mainnav form.search-form input.search-submit {
 	display: none;
 }
-#mainnav > form.search-form input.search-field {
+#mainnav form.search-form input.search-field {
 	background: white;
 	background-image: url('images/search_r1.png');
 	/*background-image: url('images/search_r1.png'), linear-gradient(90deg, #fff 0%, #fff 100%);*/
@@ -658,37 +658,37 @@ a.steckbrief-link {
 	cursor: pointer;
 	z-index: 106;
 }
-#mainnav > form.search-form input.search-field::-moz-placeholder {
+#mainnav form.search-form input.search-field::-moz-placeholder {
 	color: transparent;
 	transition: color 0.5s ease-in-out;
 }
- #mainnav > form.search-form input.search-field:-moz-placeholder {
+ #mainnav form.search-form input.search-field:-moz-placeholder {
  	color: transparent;
 	transition: color 0.5s ease-in-out;
  }
- #mainnav > form.search-form input.search-field::-webkit-input-placeholder {
+ #mainnav form.search-form input.search-field::-webkit-input-placeholder {
 	color: transparent;
 	transition: color 0.5s ease-in-out;
 }
-#mainnav > form.search-form input.search-field:hover {
+#mainnav form.search-form input.search-field:hover {
 		background: #ff8800;
 		background-image: url('images/search2_r1.png');
 /*		background-image: url('images/search2_r1.png'), linear-gradient(90deg, #ff8800 0%, #ff8800 100%);*/
 }
-#mainnav > form.search-form input.search-field:focus {
+#mainnav form.search-form input.search-field:focus {
 	background-image: none;
 	width: 150px;
 	color: black;
 	background-color: white;
 	cursor: auto;
 }
-#mainnav > form.search-form input.search-field:focus::-moz-placeholder {
+#mainnav form.search-form input.search-field:focus::-moz-placeholder {
 	color: #555;
 }
- #mainnav > form.search-form input.search-field:focus:-moz-placeholder {
+ #mainnav form.search-form input.search-field:focus:-moz-placeholder {
  	color: #555;
  }
- #mainnav > form.search-form input.search-field:focus::-webkit-input-placeholder {
+ #mainnav form.search-form input.search-field:focus::-webkit-input-placeholder {
 	color: #555;
 }
 
@@ -698,10 +698,10 @@ select {
 }
 
 /* Navigation */
-#mainnav > input[type=checkbox] {
+#mainnav input[type=checkbox] {
 	display: none;
 }
-#mainnav > label {
+#mainnav  label#lmenu {
 	display: none;
 }
 #mainnav {
@@ -722,12 +722,12 @@ select {
 #mainnav .subarrow {
 	display: none;
 }
-#mainnav > div > ul {
+#mainnav ul.menu {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 }
-#mainnav > div > ul > li {
+#mainnav ul.menu > li {
 	margin: 0;
 	padding: 0;
 	float: left;
@@ -736,7 +736,7 @@ select {
 	left: 0;
 	top: 0;
 }
-#mainnav > div > ul > li > a {
+#mainnav ul.menu > li > a {
 	color: black;
 	display: block;
 	height: 40px;
@@ -748,16 +748,16 @@ select {
 		font-family: 'PoliticsHead', sans-serif;
 		font-size: 120%;
 }
-#mainnav > div > ul > li:hover > a, #mainnav > div > ul > li.hover > a, #mainnav > div > ul > li > a:focus {
+#mainnav ul.menu > li:hover > a, #mainnav ul.menu > li.hover > a, #mainnav ul.menu > li > a:focus {
 	background-color: #ff8800;
 	opacity: .8;
 	color: white;
 }
 
-#mainnav > div > ul > li > div.lvl > ul {
+#mainnav ul.menu > li > div.lvl > ul {
 	display: none;
 }
-#mainnav > div > ul > li div.lvl > ul {
+#mainnav ul.menu > li div.lvl > ul {
 	position: absolute;
 	top: 39px;
 	left: 0px;
@@ -769,18 +769,18 @@ select {
 	min-width: 100%;
 	box-shadow: 1px 2px 2px 2px rgba(0,0,0,0.29);
 }
-#mainnav > div > ul > li div.lvl > ul > li > a {
+#mainnav ul.menu > li div.lvl > ul > li > a {
 	font-family: 'RobotoLight', sans-serif;
 	font-size: 90%;
 }
-#mainnav > div > ul > li:hover > div.lvl > ul, #mainnav > div > ul > li.hover > div.lvl > ul, #mainnav > div > ul > li > a:focus ~  div.lvl > ul {
+#mainnav ul.menu > li:hover > div.lvl > ul, #mainnav ul.menu > li.hover > div.lvl > ul, #mainnav ul.menu > li > a:focus ~  div.lvl > ul {
 	display: block;
 
 }
-#mainnav > div > ul > li> $ul > li:focus {
+#mainnav ul.menu > li> $ul > li:focus {
 	display: block;
 }
-#mainnav > div > ul > li > div.lvl > ul li {
+#mainnav ul.menu > li > div.lvl > ul li {
 		margin: 0;
 	padding: 0;
 	float: left;
@@ -790,10 +790,10 @@ select {
 	top: 0;
 	width: 100%;
 }
-#mainnav > div > ul > li > div.lvl > ul li > ul, #mainnav > div > ul > li > div.lvl > ul li > a {
+#mainnav ul.menu > li > div.lvl > ul li > ul, #mainnav ul.menu > li > div.lvl > ul li > a {
 	float: left;
 }
-#mainnav > div > ul > li > div.lvl > ul li > a {
+#mainnav ul.menu > li > div.lvl > ul li > a {
 	color: black;
 	display: inline-block;
 	height: 30px;
@@ -804,41 +804,41 @@ select {
 	width: 100%;
 	white-space:nowrap;
 }
-#mainnav > div > ul > li > div.lvl > ul li:hover > a, #mainnav > div > ul > li > div.lvl > ul li.hover > a{
+#mainnav ul.menu > li > div.lvl > ul li:hover > a, #mainnav ul.menu > li > div.lvl > ul li.hover > a{
 	color: white;
 	background-color: #ff8800;
 	opacity: .8;
 }
- #mainnav > div > ul li.current-menu-item > a, #mainnav > div > ul li.current-menu-ancestor > a, #mainnav > div > ul li.current-menu-item > a, #mainnav > div > ul > li > div.lvl > ul li.current-menu-ancestor > a {
+ #mainnav ul.menu li.current-menu-item > a, #mainnav ul.menu li.current-menu-ancestor > a, #mainnav ul.menu li.current-menu-item > a, #mainnav ul.menu > li > div.lvl > ul li.current-menu-ancestor > a {
 	/*color: white !important;
 	background-color: #ff8800 !important;*/
 }
 
 
-#mainnav > div > ul > li > div.lvl ul > li > div.lvl > ul {
+#mainnav ul.menu > li > div.lvl ul > li > div.lvl > ul {
 display: none;
 }	
-#mainnav > div > ul > li > div.lvl ul > li.menu-item-has-children {
+#mainnav ul.menu > li > div.lvl ul > li.menu-item-has-children {
 	white-space:nowrap;
 }
-#mainnav > div > ul > li > div.lvl ul > li.menu-item-has-children > a {
+#mainnav ul.menu > li > div.lvl ul > li.menu-item-has-children > a {
 	display: inline-block;
 	width: 100%;
 	float: none;
 }
-#mainnav > div > ul > li > div.lvl ul > li.menu-item-has-children > a > span:before {
+#mainnav ul.menu > li > div.lvl ul > li.menu-item-has-children > a > span:before {
 	content: "►";
 	float: right;
 	font-size: 80%;
 }
-#mainnav > div > ul > li > div.lvl ul > li.menu-item-has-children > a > span:after {
+#mainnav ul.menu > li > div.lvl ul > li.menu-item-has-children > a > span:after {
 	content: "";
 	text-align: right;
 	display: inline-block;
 	width: 25px;
 	padding-left: 5px;
 }
-#mainnav > div > ul > li > div.lvl ul > li.menu-item-has-children > div.lvl {
+#mainnav ul.menu > li > div.lvl ul > li.menu-item-has-children > div.lvl {
 	float: none;
 	display: inline-block;
 	width: 0px;
@@ -851,10 +851,10 @@ display: none;
 	top: 0;
 	right: 0;
 }
-#mainnav > div > ul > li > div.lvl ul > li:hover > div.lvl > ul, #mainnav > div > ul > li > div.lvl ul > li.hover > div.lvl > ul {
+#mainnav ul.menu > li > div.lvl ul > li:hover > div.lvl > ul, #mainnav ul.menu > li > div.lvl ul > li.hover > div.lvl > ul {
 	display: block;
 }
-#mainnav > div > ul > li > div.lvl ul > li > div.lvl > ul {
+#mainnav ul.menu > li > div.lvl ul > li > div.lvl > ul {
 	
 	position: absolute;
 	left: 0px;
@@ -910,72 +910,153 @@ textarea#comment {
 }
 
 
-@media only screen and (max-width: 700px) {
-#mainnav > #logosmall {
+#shadowbox {
+	background-color: rgba(0,0,0,1);
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 0px;
+	height: 100%;
+	z-index: 9998;
+	display: none;
+	opacity: 0;
+	transition:opacity 0.5s ease-in-out;
+}
+input[type=checkbox]#cbmenu {
 	display: none;
 }
+@media only screen and (max-width: 700px) {
+#shadowbox {
+	display: block;
+}
 
-
-#mainnav > input[type=checkbox] {
+input[type=checkbox]#cbmenu {
 	display: block;
 	visibility: hidden;
 	position: absolute;
 	left: 0;
 	top: 0;
 }
-#mainnav > label {
+#mainnav form.search-form {
 	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
 	height: 40px;
 	padding: 5px;
-	color: black;
-	background-color: white;
-	line-height: 30px;
-	text-align: left;
-	
+	padding-right: 45px;
+	background: transparent;
 }
-#mainnav > label#lmenu2 {
-	display: none;
+#mainnav form.search-form > .search-field, #mainnav form.search-form > .search-field:hover {
+	width: 100% !important;
+	background: white !important;
+	border: 1px solid #ddd !important;
 }
 #mainnav {
-	position: relative;
+	position: fixed;
+	left: 0;
+	top: 0;
 	padding-left: 0;
-	padding-right: 0;
-	height: auto;
+	padding-right: 40px;
+	height: 100%;
+	width: auto;
+	max-width: 30px;
+		transition:max-width 0.5s ease-in-out;
+		background-color: transparent;
+	z-index: 9999;
+		background-color: transparent;
+}
+#mainnav > div {
+	width: 100%;
+	height: 100%;
+	padding-top: 40px;
+	background-color: white;
+	border-right: 1px solid #ff8800;
+}
+#mainnav .main-menu-container {
+	background-color: white;
+	height: 100%;
+	overflow-y: auto;
 }
 #mainnav li:hover > a {
-	background-color: white;
+	background-color: red;
 	color: black;
 }
-#cbmenu:checked ~ div > ul {
-	max-height: 1000px;
+#mainnav label#lmenu {
+	display: block;
+	position: absolute;
+	top: 20px;
+	right: 1px;
+	width: 40px;
+	height: 38px;
+	background-color: white;
+	padding: 0px 6px;
+	text-align: center;
+	line-height: 40px;
+		border: 1px solid #ff8800;
+		border-left: none;
+	z-index: 10000;
 }
-#mainnav > div > ul > li:first-child:before {
+
+#mainnav label#lmenu > span {
+	display: block;
+    width: 28px;
+    height: 4px;
+    background-color: #444;
+    margin: 6px 0;
+        transition: 0.4s;
+}
+#cbmenu:checked ~ #mainnav label#lmenu > span:nth-child(2) {
+		opacity: 0;
+}
+#cbmenu:checked ~ #mainnav label#lmenu > span:first-child {
+    transform:  translateY(10px) rotate(-45deg);
+}
+#cbmenu:checked ~ #mainnav label#lmenu > span:last-child {
+    transform:  translateY(-10px) rotate(45deg);
+}
+
+
+#mainnav ul.menu {
+	max-height: auto !important;
+}
+#cbmenu:checked ~ #mainnav {
+	max-width: 100%;
+}
+#cbmenu:checked ~ #shadowbox {
+	width: 100%;
+	opacity: .7;
+}
+#mainnav form.search-form input.search-field::-moz-placeholder {
+	color: #555;
+}
+ #mainnav form.search-form input.search-field:-moz-placeholder {
+ 	color: #555;
+ }
+ #mainnav form.search-form input.search-field::-webkit-input-placeholder {
+	color: #555;
+}
+#mainnav ul.menu > li:first-child:before {
 	content: " ";
 	display: block;
 	height: 1px;
 	width: 100%;
 	background-color: #ddd;
 }
-#cbmenu:checked ~ label#lmenu2 {
-	display: block;
-}
-#cbmenu:checked ~ label#lmenu1 {
-	display: none;
-}
-	#mainnav > div > ul {
+	#mainnav ul.menu {
 	
 	list-style-type: none;
 	margin: 0;
+	margin-left: 5px;
+	margin-right: 5px;
 	padding: 0;
-
-	width: 100%;
 	position: relative;
 	left: 0;
-	max-height: 0;
 	overflow: hidden;
-	transition:max-height 0.5s ease-in-out;
+	transition:max-width 0.5s ease-in-out;
 }
-#mainnav > div > ul > li {
+#mainnav ul.menu > li {
 	margin: 0;
 	padding: 0;
 	float: none;
@@ -985,7 +1066,7 @@ textarea#comment {
 	top: 0;
 	height: auto;
 }
-#mainnav > div > ul > li > a {
+#mainnav ul.menu > li > a {
 	color: black;
 	display: block;
 	height: 40px;
@@ -995,25 +1076,25 @@ textarea#comment {
 	padding-right: 10px;
 	background-color: white;
 }
-#mainnav > div > ul > li.current-menu-ancestor > a {
+#mainnav ul.menu > li.current-menu-ancestor > a {
 	background-color: white;
 		color: black;
 }
-#mainnav > div > ul > li:hover > a, #mainnav > div > ul > li.hover > a, #mainnav > div > ul > li.current-menu-item > a{
+#mainnav ul.menu > li:hover > a, #mainnav ul.menu > li.hover > a, #mainnav ul.menu > li.current-menu-item > a{
 	background-color: white;
 	color: black;
 }
-#mainnav > div > ul > li > a:hover, #mainnav > div > ul > li.current-menu-item > a{
+#mainnav ul.menu > li > a:hover, #mainnav ul.menu > li.current-menu-item > a{
 	background-color: #ff8800;
 	color: white;
 }
 
 
 /* 2. ebene */
-#mainnav > div > ul > li div.lvl > ul {
+#mainnav ul.menu > li div.lvl > ul {
 	display: block !important;
 }
-#mainnav > div > ul > li div.lvl > ul {
+#mainnav ul.menu > li div.lvl > ul {
 	position: relative;
 	box-shadow:  none;
 		list-style-type: none;
@@ -1022,9 +1103,9 @@ textarea#comment {
 	background-color: white;
 	top: 0;
 	left: 0;
-	margin-left: 20px;
+	margin-left: 0px;
 }
-#mainnav > div > ul > li:hover div.lvl > ul {
+#mainnav ul.menu > li:hover div.lvl > ul {
 	display: block;
 
 }
@@ -1033,7 +1114,7 @@ textarea#comment {
 	width: 100% !important;
 	display: block !important;
 }
-#mainnav > div > ul > li > div.lvl > ul li {
+#mainnav ul.menu > li > div.lvl > ul li {
 		margin: 0;
 	padding: 0;
 	float: none;
@@ -1043,42 +1124,50 @@ textarea#comment {
 	top: 0;
 	width: 100%;
 }
-#mainnav > div > ul > li > div.lvl > ul li > ul, #mainnav > div > ul > li > div.lvl > ul li > a {
+#mainnav ul.menu > li > div.lvl > ul li > ul, #mainnav ul.menu > li > div.lvl > ul li > a {
 	float: none;
 }
-#mainnav > div > ul > li > div.lvl > ul li > a {
+#mainnav ul.menu > li > div.lvl > ul li > a {
 	color: black;
 	display: block;
 	height: 40px;
 	line-height: 30px;
 	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
 	width: 100%;
 	white-space:nowrap;
 }
-#mainnav > div > ul > li > div.lvl > ul li:hover > a, #mainnav > div > ul > li > div.lvl > ul li.current-menu-ancestor > a {
+ul.submenu a {
+	padding-left: 20px !important;
+}
+ul.submenu ul.submenu a {
+	padding-left: 25px !important;
+}
+#mainnav ul.menu > li > div.lvl > ul li:hover > a, #mainnav ul.menu > li > div.lvl > ul li.current-menu-ancestor > a {
 	color: black;
 	background-color: white;
 }
-#mainnav > div > ul > li > div.lvl > ul li > a:hover, #mainnav > div > ul > li > div.lvl > ul li.current-menu-item > a {
+#mainnav ul.menu > li > div.lvl > ul li > a:hover, #mainnav ul.menu > li > div.lvl > ul li.current-menu-item > a {
 	color: white;
 	background-color: #ff8800;
 }
 
-#mainnav > div > ul > li > div.lvl ul > li.menu-item-has-children > a > span:before {
+#mainnav ul.menu > li > div.lvl ul > li.menu-item-has-children > a > span:before {
 	content: "";
 	float: none;
 	width: 0;
 	height: 0;
 	font-size: 80%;
 }
-#mainnav > div > ul > li > div.lvl ul > li.menu-item-has-children > a > span:after {
+#mainnav ul.menu > li > div.lvl ul > li.menu-item-has-children > a > span:after {
 	content: "";
 	text-align: right;
 	display: inline-block;
 	width: 0px;
 	padding-left: 0px;
 }
-#mainnav > div > ul > li > div.lvl ul > li > div.lvl > ul {
+#mainnav ul.menu > li > div.lvl ul > li > div.lvl > ul {
 	position: relative;
 	box-shadow:  none;
 		list-style-type: none;
@@ -1087,9 +1176,9 @@ textarea#comment {
 	background-color: white;
 	top: 0;
 	left: 0;
-	margin-left: 20px;
+	margin-left: 0px;
 }	
-#mainnav > div > ul > li > div.lvl ul > li.menu-item-has-children > div.lvl {
+#mainnav ul.menu > li > div.lvl ul > li.menu-item-has-children > div.lvl {
 	position: relative;
 }
 #mainnav > form.search-form {
@@ -1105,11 +1194,16 @@ div.content, div.contentrow, div.contentrow > div {
 	float: none;
 }
 
+header#mainheader {
+	min-height: 20vw;
+	background-size: 120% auto;
+}
+
 header#mainheader a.homelink {
-display: none;
+	font-size: 2.14vw;
 }
 .extrahomelink {
-	display: block;
+	display: none;
 	margin-bottom: 20px;
 	background-color: white;
 	padding: 10px;
@@ -1169,15 +1263,11 @@ display: none;
 
 @media only screen and (max-width: 488px) {
 header#mainheader {
-	display: block;
-	width: 100%;
-	height: 0;
-	padding-top: 36%;
-	background-image: url('images/hpheader-crop.png');
-	background-position: right center;
-	background-repeat: no-repeat;
-	background-size: 100% auto;
-	min-height: 0;
+	height: 45vw;
+}
+
+header#mainheader a.homelink {
+	font-size: 5.5vw;;
 }	
 }
 

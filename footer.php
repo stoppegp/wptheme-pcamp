@@ -14,5 +14,12 @@
     <?php wp_footer(); ?>
     </div>
     </div>
+    	<script type="text/javascript">
+	$(window).resize(function() {
+		if ( $('#mainnav').css("position") != "fixed") {
+		$( '#mainnav .main-menu-container li:has(ul)' ).doubleTapToGo();
+		}
+	}).resize()
+		</script>
 </body>
 </html>
